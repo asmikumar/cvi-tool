@@ -6,6 +6,39 @@ position:fixed;
     
 }
 
+/* square */
+div.s {
+width: 50px;
+height:50px;
+background-color:#FF5722;
+position:fixed;
+    
+}
+
+/* circle */
+div.c {
+width: 50px;
+height:50px;
+background-color:#FF5722;
+border-radius: 50%;
+position:fixed;
+visibility: hidden;
+    
+}
+
+/* triangle */
+div.t {
+width: 0px;
+height:0px;
+background-color:#FF5722;
+border-left: 50px solid transparent;
+border-right: 50px solid transparent;
+border-bottom: 50px solid;
+position:fixed;
+visibility: hidden;
+}
+
+
 .slidecontainer {
   width: 20%; /* Width of the outside container */
 }
@@ -52,3 +85,5 @@ max-width: 200px;
 body {
   background-color: white;
 }
+
+/* --------------------------------------------------------------------------------------*/

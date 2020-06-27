@@ -1,0 +1,48 @@
+<head>
+<link rel="stylesheet" type="text/css" href="./testcss.css">
+<link rel="stylesheet" type="text/css" href="./spectrum.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="./spectrum.js"></script>
+
+<body>
+<div class="slidecontainer">
+  <label>Speed</label>
+  <input type="range" min="1" max="20" value="10" class="slider" id="rangeSpeed">
+</div>
+
+<div class="slidecontainer">
+  <label>Size</label>
+  <input type="range" min="50" max="200" value="50" class="slider" id="rangeSize"> 
+</div>
+
+<div>
+<label>Object color</label>
+<input type='text' id="full"/>
+</div>
+
+<div>
+<label>Background color</label>
+<input type='text' id="full2"/>
+</div>
+
+<div style="height:50px; width:50px;" id="anim_ball" class='a'></div>
+
+
+<!--
+<div style="height:50px; width:50px;" id="square" class='s'></div>
+-->
+
+<div style="height:50px; width:50px; border-radius:100%;" id="circle" class='c'></div>
+
+<!--  
+<div style="height:50px; width:50px; border-left:50px solid transparent; border-right:50px solid transparent;" id="triangle" class='t'></div>
+-->
+
+</body>
+
+<script type="text/javascript" src="./testjs.js"></script>
+
+</select>
+<button onclick="changeToSquare()">Square</button>
+<button onclick="changeToCircle()">Circle</button>
+<!-- <button onclick="changeToTriangle()">Triangle</button> -->
