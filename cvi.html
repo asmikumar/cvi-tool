@@ -7,12 +7,12 @@
 <body>
 <div class="slidecontainer">
   <label>Speed</label>
-  <input type="range" min="1" max="20" value="10" class="slider" id="rangeSpeed">
+  <input type="range" min="50" max="200" value="125" class="slider" id="rangeSpeed">
 </div>
 
 <div class="slidecontainer">
   <label>Size</label>
-  <input type="range" min="50" max="200" value="50" class="slider" id="rangeSize"> 
+  <input type="range" min="100" max="250" value="100" class="slider" id="rangeSize"> 
 </div>
 
 <div>
@@ -25,24 +25,23 @@
 <input type='text' id="full2"/>
 </div>
 
-<div style="height:50px; width:50px;" id="anim_ball" class='a'></div>
+<!-- <div style="height:50px; width:50px;" id="anim_ball" class='a'></div> -->
 
-
-<!--
-<div style="height:50px; width:50px;" id="square" class='s'></div>
--->
-
-<div style="height:50px; width:50px; border-radius:100%;" id="circle" class='c'></div>
-
-<!--  
-<div style="height:50px; width:50px; border-left:50px solid transparent; border-right:50px solid transparent;" id="triangle" class='t'></div>
--->
+<img src="./shapes/blank.png" id="anim_ball" style="position: absolute;" height="100" width="100">
 
 </body>
 
 <script type="text/javascript" src="./cvi.js"></script>
 
-</select>
-<button onclick="changeToSquare()">Square</button>
-<button onclick="changeToCircle()">Circle</button>
-<!-- <button onclick="changeToTriangle()">Triangle</button> -->
+<!-- <button onclick="changeToSquare()">Square</button>
+<button onclick="changeToCircle()">Circle</button> -->
+
+<p></p>
+<img onclick="changeIt(this)" src="./shapes/square_red.png" name='square_red' border='0' height='100' width='100'/>
+<img onclick="changeIt(this)" src="./shapes/triangle_red.png" name='triangle_red' border='0' height='100' width='100'/>
+<img onclick="changeIt(this)" src="./shapes/circle_red.png" name='circle_red' border='0' height='100' width='100'/>
+<!-- <img onclick="changeIt(this)" src='em3.gif' name='example' border='0' />
+<img onclick="changeIt(this)" src='em4.gif' name='example' border='0' />
+<img onclick="changeIt(this)" src='em5.gif' name='example' border='0' /> -->
+
+<!-- <input type="button" onclick="changeIt(this)" value="Start"> -->

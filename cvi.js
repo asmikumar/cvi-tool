@@ -1,35 +1,14 @@
-var speedModifier = 0.5;
+var speedModifier = 0.125;
 
 // button clicks
 function changeToSquare() {
-  document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
-  document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
   document.getElementById("anim_ball").style.borderRadius = "0%";
-  document.getElementById("anim_ball").style.borderLeftWidth = "0px";
-  document.getElementById("anim_ball").style.borderRightWidth = "0px";
-  document.getElementById("anim_ball").style.borderBottomWidth = "0px";
 }
 
 function changeToCircle() {
-  document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
-  document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
   document.getElementById("anim_ball").style.borderRadius = "100%";
-  document.getElementById("anim_ball").style.borderLeftWidth = "0px";
-  document.getElementById("anim_ball").style.borderRightWidth = "0px";
-  document.getElementById("anim_ball").style.borderBottomWidth = "0px";
 }
 
-function changeToTriangle() {
-  document.getElementById("anim_ball").style.width = "0px";
-  document.getElementById("anim_ball").style.height = "0px";
-  document.getElementById("anim_ball").style.borderRadius = "0%";
-  document.getElementById("anim_ball").style.borderLeftWidth = sliderSize.value.toString().concat("px");
-  document.getElementById("anim_ball").style.borderRightWidth = sliderSize.value.toString().concat("px");
-  document.getElementById("anim_ball").style.borderBottomWidth = sliderSize.value.toString().concat("px");
-  document.getElementById("anim_ball").style.borderLeftStyle = "solid ";
-  document.getElementById("anim_ball").style.borderRightStyle = "solid ";
-  document.getElementById("anim_ball").style.borderBottomStyle = "solid ";
-}
 
 $(document).ready(function(){
     animateDiv();
@@ -38,8 +17,10 @@ $(document).ready(function(){
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - $("#anim_ball").height();
-    var w = $(window).width() - $("#anim_ball").width();
+    // var h = $(window).height() - $("#anim_ball").height();
+    // var w = $(window).width() - $("#anim_ball").width();
+    var h = $(window).height() - sliderSize.value;
+    var w = $(window).width() - sliderSize.value;
     
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
@@ -51,7 +32,7 @@ function animateDiv(){
     var newq = makeNewPosition();
     var oldq = $('#anim_ball').offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
+
     $('#anim_ball').animate({ top: newq[0], left: newq[1] }, speed, function(){
       animateDiv();        
     }); 
@@ -162,7 +143,7 @@ $("#full2").spectrum({
 
 // Update the current slider SPEED value (each time you drag the slider handle)
 sliderSpeed.oninput = function() {
-speedModifier = 0.05*sliderSpeed.value;
+speedModifier = 0.001*sliderSpeed.value;
 console.log(speedModifier);
 }
 
@@ -173,4 +154,17 @@ sliderSize.oninput = function(){
     // $("#anim_ball").width((sliderSize.value).toString());
     document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
     document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
+}
+// -----------------------------------------------------------------------------------
+function changeIt(img) {
+    var location = img.src;
+    console.log(location);
+    document.getElementById("anim_ball").src = location.toString();
+
+    // document.getElementById('start').onclick = function() {
+ //         var image = '<img src="'+location+'">';
+ //         popup = window.open();
+ //     popup.document.write(img);   
+    // }​;​
+    // return location;
 }
