@@ -1,15 +1,5 @@
 var speedModifier = 0.125;
 
-// button clicks
-function changeToSquare() {
-  document.getElementById("anim_ball").style.borderRadius = "0%";
-}
-
-function changeToCircle() {
-  document.getElementById("anim_ball").style.borderRadius = "100%";
-}
-
-
 $(document).ready(function(){
     animateDiv();
 });
@@ -17,8 +7,6 @@ $(document).ready(function(){
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
-    // var h = $(window).height() - $("#anim_ball").height();
-    // var w = $(window).width() - $("#anim_ball").width();
     var h = $(window).height() - sliderSize.value;
     var w = $(window).width() - sliderSize.value;
     
@@ -149,22 +137,20 @@ console.log(speedModifier);
 
 // Update the current slider SIZE value (each time you drag the slider handle)
 sliderSize.oninput = function(){
-
-    // $("#anim_ball").height((sliderSize.value).toString());
-    // $("#anim_ball").width((sliderSize.value).toString());
     document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
     document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
 }
 // -----------------------------------------------------------------------------------
 function changeIt(img) {
     var location = img.src;
-    console.log(location);
+    $(this).css("border","5px solid plum");
     document.getElementById("anim_ball").src = location.toString();
-
-    // document.getElementById('start').onclick = function() {
- //         var image = '<img src="'+location+'">';
- //         popup = window.open();
- //     popup.document.write(img);   
-    // }​;​
-    // return location;
 }
+
+// select a shape from array
+$(document).on("click","#figures img",function(){
+    $(this).css("border","5px solid plum");
+    $("#figures img").not($(this)).css("border","5px solid transparent");
+    var location = this.src;
+    document.getElementById("anim_ball").src = location.toString();
+});
