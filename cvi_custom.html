@@ -1,5 +1,5 @@
 <head>
-<link rel="stylesheet" type="text/css" href="./cvi.css">
+<link rel="stylesheet" type="text/css" href="./cvi_custom.css">
 <link rel="stylesheet" type="text/css" href="./spectrum.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="./spectrum.js"></script>
@@ -22,18 +22,13 @@
 </div>
 
 <div>
-<label>Object color</label>
-<input type='text' id="full"/>
-</div>
-
-<div>
 <label>Background color</label>
 <input type='text' id="full2"/>
 </div>
 
 </body>
 
-<script type="text/javascript" src="./cvi.js"></script>
+<script type="text/javascript" src="./cvi_custom.js"></script>
 
 <p></p>
 <div id="figures">
@@ -41,14 +36,33 @@
 <img src="./shapes/square_red.png" name='square_red' />
 <img src="./shapes/triangle_red.png" name='triangle_red' />
 <img src="./shapes/circle_red.png" name='circle_red' />
+<br clear="all" />
+<img src="./shapes/square_yellow.png" name='square_yellow' />
+<img src="./shapes/triangle_yellow.png" name='triangle_yellow' />
+<img src="./shapes/circle_yellow.png" name='circle_yellow' />
+<br clear="all" />
+<img src="./shapes/square_green.png" name='square_green' />
+<img src="./shapes/triangle_green.png" name='triangle_green' />
+<img src="./shapes/circle_green.png" name='circle_green' />
+<br clear="all" />
+<img src="./shapes/square_blue.png" name='square_blue' />
+<img src="./shapes/triangle_blue.png" name='triangle_blue' />
+<img src="./shapes/circle_blue.png" name='circle_blue' />
+<br clear="all" />
+<img src="./shapes/square_grayscale.png" name='square_grayscale' />
+<img src="./shapes/triangle_grayscale.png" name='triangle_grayscale' />
+<img src="./shapes/circle_grayscale.png" name='circle_grayscale' />
+
 </div>
 
 </div> <!-- hide/show element -->
 
+<div>
 <img src="./shapes/blank.png" id="anim_ball" style="position: absolute;" height="100" width="100"> 
+</div>
 
 <script type="text/javascript">
-	document.querySelector('button').addEventListener('click', toggle)
+  document.querySelector('button').addEventListener('click', toggle)
 
 function toggle(event) {
   if (document.getElementById('spoiler').style.display == 'none') {
@@ -60,3 +74,4 @@ function toggle(event) {
   }
 }
 </script>
+
