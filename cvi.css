@@ -23,7 +23,6 @@ background-color:#FF5722;
 border-radius: 50%;
 position:fixed;
 visibility: hidden;
-    
 }
 
 /* triangle */
@@ -86,7 +85,6 @@ body {
   background-color: white;
 }
 
-/* -------------------------------------------------------------------------------------- */
 #figures > img{
   border-radius:0%;
   width: 50px;
