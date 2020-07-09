@@ -132,19 +132,12 @@ $("#full2").spectrum({
 // Update the current slider SPEED value (each time you drag the slider handle)
 sliderSpeed.oninput = function() {
 speedModifier = 0.001*sliderSpeed.value;
-console.log(speedModifier);
 }
 
 // Update the current slider SIZE value (each time you drag the slider handle)
 sliderSize.oninput = function(){
     document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
     document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
-}
-// -----------------------------------------------------------------------------------
-function changeIt(img) {
-    var location = img.src;
-    $(this).css("border","5px solid plum");
-    document.getElementById("anim_ball").src = location.toString();
 }
 
 // select a shape from array
@@ -153,4 +146,6 @@ $(document).on("click","#figures img",function(){
     $("#figures img").not($(this)).css("border","5px solid transparent");
     var location = this.src;
     document.getElementById("anim_ball").src = location.toString();
+
+    location_picked = location; // for linking to cvi.html
 });
