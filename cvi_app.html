@@ -1,87 +1,21 @@
 <head>
-<link rel="stylesheet" type="text/css" href="./cvi_app.css">
 <link rel="stylesheet" type="text/css" href="./spectrum.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="./spectrum.js"></script>
 
 <body>
 
-<button onclick="toggle()">Hide</button> <!-- hide/show button -->
-<p></p>
-
-<div id="spoiler"> <!-- hide/show element -->
-
-<div class="slidecontainer">
-  <label>Speed</label>
-  <input type="range" min="50" max="200" value="125" class="slider" id="rangeSpeed">
-</div>
-
-<div class="slidecontainer">
-  <label>Size</label>
-  <input type="range" min="100" max="250" value="100" class="slider" id="rangeSize"> 
-</div>
-
-<div>
-<label>Background color</label>
-<input type='text' id="full2"/>
-</div>
-
 </body>
 
 <script type="text/javascript" src="./cvi_app.js"></script>
 
-<p></p>
-<div id="figures">
-
-<img src="./shapes/square_red.png" name='square_red' />
-<img src="./shapes/triangle_red.png" name='triangle_red' />
-<img src="./shapes/circle_red.png" name='circle_red' />
-<br clear="all" />
-<img src="./shapes/square_yellow.png" name='square_yellow' />
-<img src="./shapes/triangle_yellow.png" name='triangle_yellow' />
-<img src="./shapes/circle_yellow.png" name='circle_yellow' />
-<br clear="all" />
-<img src="./shapes/square_green.png" name='square_green' />
-<img src="./shapes/triangle_green.png" name='triangle_green' />
-<img src="./shapes/circle_green.png" name='circle_green' />
-<br clear="all" />
-<img src="./shapes/square_blue.png" name='square_blue' />
-<img src="./shapes/triangle_blue.png" name='triangle_blue' />
-<img src="./shapes/circle_blue.png" name='circle_blue' />
-<br clear="all" />
-<img src="./shapes/square_grayscale.png" name='square_grayscale' />
-<img src="./shapes/triangle_grayscale.png" name='triangle_grayscale' />
-<img src="./shapes/circle_grayscale.png" name='circle_grayscale' />
-
-</div>
-
-</div> <!-- hide/show element -->
-
 <div>
-<img src="./shapes/blank.png" id="anim_ball" style="position: absolute;" height="100" width="100"> 
+<img src="./shapes/square_red.png" id="anim_ball" style="position: fixed;" height="200" width="200"> 
+<!-- height = width; low = 100, medium = 175, high = 250 -->
+<!-- shapes = square_red, triangle_red, circle_red, square_yellow, triangle_yellow, circle_yellow, square_green, triangle_green, circle_green, square_blue, triangle_blue, circle_blue, square_grayscale, triangle_grayscale, circle_grayscale -->
 </div>
 
 <script type="text/javascript">
-  document.querySelector('button').addEventListener('click', toggle)
-
-function toggle(event) {
-  if (document.getElementById('spoiler').style.display == 'none') {
-    event.target.innerText = 'Hide'
-    document.getElementById('spoiler').style.display = ''
-  } else {
-    event.target.innerText = 'Show'
-    document.getElementById('spoiler').style.display = 'none'
-  }
-}
-</script>
-
-<button onclick="startTracking()">Start tracking</button>
-
-<script type="text/javascript">
-// var object;
-// var file;
-// Set object = CreateObject("Scripting.FileSystemObject");
-// Set file = object.CreateTextFile("./test.txt", true);
 
 // returns an object with x/y coordinates of the center of the element
 function startTracking() {
@@ -92,4 +26,5 @@ function startTracking() {
     console.log("X: " + centerX + ", Y: " + centerY);
   }, 100);
 };
+
 </script>
