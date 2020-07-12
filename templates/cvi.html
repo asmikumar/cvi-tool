@@ -11,57 +11,68 @@
 
 <div id="spoiler"> <!-- hide/show element -->
 
+<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'> <!-- font stylesheet -->
+<style>
+body {
+    font-family: 'Gloria Hallelujah';font-size: 25px;
+}
+button {
+    font-family : 'Gloria Hallelujah';
+    font-size: 17px;
+}
+</style>
+
 <div class="slidecontainer">
-  <label>Speed</label>
+  <label>Speed:</label> <a id='speed_value'>125</a>
   <input type="range" min="50" max="200" value="125" class="slider" id="rangeSpeed">
 </div>
 
 <div class="slidecontainer">
-  <label>Size</label>
+  <label>Size:</label> <a id='size_value'>100</a>
   <input type="range" min="100" max="250" value="100" class="slider" id="rangeSize"> 
 </div>
 
-<div>
-<label>Background color</label>
+<div class='small'>
+<label>Background color:</label>
 <input type='text' id="full2"/>
 </div>
 
-</body>
-
 <script type="text/javascript" src="{{ url_for('static', filename='cvi.js')}}"></script>
 
-<p></p>
+<p style="line-height:0%;margin:0px;"><br></p>
 <div id="figures">
 
+<label>Figure selection:</label>
+<p style="line-height:10px;margin:0px;"><br></p>
+
 <img src="{{ url_for('static', filename='shapes/square_red.png')}}" name='square_red' />
-<img src="{{ url_for('static', filename='shapes/triangle_red.png')}}" name='triangle_red' />
-<img src="{{ url_for('static', filename='shapes/circle_red.png')}}" name='circle_red' />
-<br clear="all" />
 <img src="{{ url_for('static', filename='shapes/square_yellow.png')}}" name='square_yellow' />
-<img src="{{ url_for('static', filename='shapes/triangle_yellow.png')}}" name='triangle_yellow' />
-<img src="{{ url_for('static', filename='shapes/circle_yellow.png')}}" name='circle_yellow' />
-<br clear="all" />
 <img src="{{ url_for('static', filename='shapes/square_green.png')}}" name='square_green' />
-<img src="{{ url_for('static', filename='shapes/triangle_green.png')}}" name='triangle_green' />
-<img src="{{ url_for('static', filename='shapes/circle_green.png')}}" name='circle_green' />
-<br clear="all" />
 <img src="{{ url_for('static', filename='shapes/square_blue.png')}}" name='square_blue' />
-<img src="{{ url_for('static', filename='shapes/triangle_blue.png')}}" name='triangle_blue' />
-<img src="{{ url_for('static', filename='shapes/circle_blue.png')}}" name='circle_blue' />
-<br clear="all" />
 <img src="{{ url_for('static', filename='shapes/square_grayscale.png')}}" name='square_grayscale' />
+<br clear="all" />
+<img src="{{ url_for('static', filename='shapes/triangle_red.png')}}" name='triangle_red' />
+<img src="{{ url_for('static', filename='shapes/triangle_yellow.png')}}" name='triangle_yellow' />
+<img src="{{ url_for('static', filename='shapes/triangle_green.png')}}" name='triangle_green' />
+<img src="{{ url_for('static', filename='shapes/triangle_blue.png')}}" name='triangle_blue' />
 <img src="{{ url_for('static', filename='shapes/triangle_grayscale.png')}}" name='triangle_grayscale' />
+<br clear="all" />
+<img src="{{ url_for('static', filename='shapes/circle_red.png')}}" name='circle_red' />
+<img src="{{ url_for('static', filename='shapes/circle_yellow.png')}}" name='circle_yellow' />
+<img src="{{ url_for('static', filename='shapes/circle_green.png')}}" name='circle_green' />
+<img src="{{ url_for('static', filename='shapes/circle_blue.png')}}" name='circle_blue' />
 <img src="{{ url_for('static', filename='shapes/circle_grayscale.png')}}" name='circle_grayscale' />
 
 </div>
 </div> <!-- hide/show element -->
 
 <div>
-<img src="{{ url_for('static', filename='shapes/blank.png')}}" id="anim_ball" style="position: absolute;" height="100" width="100"> 
+<img src="{{ url_for('static', filename='shapes/blank.png')}}" id="anim_ball" style="position: absolute;" height="100" width="100">
 </div>
 
-<p></p>
-<button id="tracking-toggle" onclick="startTracking()">Start tracking</button>
+<div class='small'>
+<button id="tracking-toggle" onclick="startTracking()" disabled='true'>Start tracking</button>
+</div>
 
 <script src="{{ url_for('static', filename='webgazer.js')}}" type="text/javascript"></script> <!-- webgazer.js -->
 <script type="text/javascript">
@@ -148,6 +159,8 @@ function stopTracking() {
   this.onclick = startTracking;
   document.querySelector('#tracking-toggle').innerHTML = 'Start tracking';
   document.getElementById("anim_ball").src = "{{ url_for('static', filename='shapes/blank.png')}}";
+  document.getElementById("tracking-toggle").disabled = true;
+  $("#figures img").css("border","5px solid transparent");
 };
 
 var el = document.getElementById("tracking-toggle"); 
@@ -155,4 +168,5 @@ el.onclick = startTracking;
 
 </script>
 
+</body>
 </head>

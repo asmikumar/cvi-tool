@@ -131,13 +131,15 @@ $("#full2").spectrum({
 
 // Update the current slider SPEED value (each time you drag the slider handle)
 sliderSpeed.oninput = function() {
-speedModifier = 0.001*sliderSpeed.value;
+    speedModifier = 0.001*sliderSpeed.value;
+    document.getElementById("speed_value").innerHTML = sliderSpeed.value;
 }
 
 // Update the current slider SIZE value (each time you drag the slider handle)
 sliderSize.oninput = function(){
     document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
     document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
+    document.getElementById("size_value").innerHTML = sliderSize.value;
 }
 
 // select a shape from array ---------------------------------
@@ -157,7 +159,7 @@ $(document).on("click", "#figures img", function(){
     else {
         $(this).css("border","5px solid transparent"); // rgba(0, 0, 0, 0)
         document.getElementById("tracking-toggle").disabled = true;
-        document.getElementById("anim_ball").src = "./shapes/blank.png";
+        document.getElementById("anim_ball").src = "../../static/shapes/blank.png";
     }
     $("#figures img").not($(this)).css("border","5px solid transparent");
 });
