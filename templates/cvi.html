@@ -1,9 +1,9 @@
 <head>
 
-<link rel="stylesheet" type="text/css" href="./cvi.css">
-<link rel="stylesheet" type="text/css" href="./spectrum.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cvi.css')}}"> 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='spectrum.css')}}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="./spectrum.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='spectrum.js')}}"></script>
 
 <body>
 
@@ -28,42 +28,42 @@
 
 </body>
 
-<script type="text/javascript" src="./cvi.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='cvi.js')}}"></script>
 
 <p></p>
 <div id="figures">
 
-<img src="./shapes/square_red.png" name='square_red' />
-<img src="./shapes/triangle_red.png" name='triangle_red' />
-<img src="./shapes/circle_red.png" name='circle_red' />
+<img src="{{ url_for('static', filename='shapes/square_red.png')}}" name='square_red' />
+<img src="{{ url_for('static', filename='shapes/triangle_red.png')}}" name='triangle_red' />
+<img src="{{ url_for('static', filename='shapes/circle_red.png')}}" name='circle_red' />
 <br clear="all" />
-<img src="./shapes/square_yellow.png" name='square_yellow' />
-<img src="./shapes/triangle_yellow.png" name='triangle_yellow' />
-<img src="./shapes/circle_yellow.png" name='circle_yellow' />
+<img src="{{ url_for('static', filename='shapes/square_yellow.png')}}" name='square_yellow' />
+<img src="{{ url_for('static', filename='shapes/triangle_yellow.png')}}" name='triangle_yellow' />
+<img src="{{ url_for('static', filename='shapes/circle_yellow.png')}}" name='circle_yellow' />
 <br clear="all" />
-<img src="./shapes/square_green.png" name='square_green' />
-<img src="./shapes/triangle_green.png" name='triangle_green' />
-<img src="./shapes/circle_green.png" name='circle_green' />
+<img src="{{ url_for('static', filename='shapes/square_green.png')}}" name='square_green' />
+<img src="{{ url_for('static', filename='shapes/triangle_green.png')}}" name='triangle_green' />
+<img src="{{ url_for('static', filename='shapes/circle_green.png')}}" name='circle_green' />
 <br clear="all" />
-<img src="./shapes/square_blue.png" name='square_blue' />
-<img src="./shapes/triangle_blue.png" name='triangle_blue' />
-<img src="./shapes/circle_blue.png" name='circle_blue' />
+<img src="{{ url_for('static', filename='shapes/square_blue.png')}}" name='square_blue' />
+<img src="{{ url_for('static', filename='shapes/triangle_blue.png')}}" name='triangle_blue' />
+<img src="{{ url_for('static', filename='shapes/circle_blue.png')}}" name='circle_blue' />
 <br clear="all" />
-<img src="./shapes/square_grayscale.png" name='square_grayscale' />
-<img src="./shapes/triangle_grayscale.png" name='triangle_grayscale' />
-<img src="./shapes/circle_grayscale.png" name='circle_grayscale' />
+<img src="{{ url_for('static', filename='shapes/square_grayscale.png')}}" name='square_grayscale' />
+<img src="{{ url_for('static', filename='shapes/triangle_grayscale.png')}}" name='triangle_grayscale' />
+<img src="{{ url_for('static', filename='shapes/circle_grayscale.png')}}" name='circle_grayscale' />
 
 </div>
 </div> <!-- hide/show element -->
 
 <div>
-<img src="./shapes/blank.png" id="anim_ball" style="position: absolute;" height="100" width="100"> 
+<img src="{{ url_for('static', filename='shapes/blank.png')}}" id="anim_ball" style="position: absolute;" height="100" width="100"> 
 </div>
 
 <p></p>
 <button id="tracking-toggle" onclick="startTracking()">Start tracking</button>
 
-<script src="webgazer.js" type="text/javascript"></script> <!-- webgazer.js -->
+<script src="{{ url_for('static', filename='webgazer.js')}}" type="text/javascript"></script> <!-- webgazer.js -->
 <script type="text/javascript">
 // webgazer
 // webgazer.setRegression('ridge') // currently must set regression and tracker
@@ -84,34 +84,57 @@
 //             let gazeX = prediction.x;
 //             let gazeY = prediction.y;
 //             console.log("GAZE X: " + gazeX + ", GAZE Y: " + gazeY);
+
+//             // POST logic (gaze)
+//             fetch('/data', {
+//                 method: 'POST',
+//                 body: JSON.stringify({x: gazeX, y: gazeY, type: 'gaze'})
+//             }).then(function (response) { // At this point, Flask has printed our JSON
+//                 return response.text();
+//             }).then(function (text) {
+//                 // console.log('POST response: ');
+//                 // Should be 'OK' if everything was successful
+//                 // console.log(text);
+//             });
+
 //         }
 //     }
 
 // returns an object with x and y coordinates of the center of the element
 function startTracking() {
   document.getElementById('spoiler').style.display = 'none' // hide customizations
+  
+    // POST logic
+    fetch('/session', {
+        method: 'POST',
+        body: JSON.stringify({"greeting": "Hello from the browser!"})
+    }).then(function (response) { // At this point, Flask has printed our JSON
+        return response.text();
+    }).then(function (text) {
+        // console.log('POST response: ');
+        // Should be 'OK' if everything was successful
+        // console.log(text);
+    });
+
   getCoordinates = setInterval(function(){ 
     var element = $('#anim_ball');
     var centerX = element.offset().left + element.width()/2
     var centerY = element.offset().top + element.height()/2
     // getPredictionKid();
-    console.log("X: " + centerX + ", Y: " + centerY);}, 100);
+    console.log("X: " + centerX + ", Y: " + centerY)
 
-    // POST logic
-    // fetch('/hello', {
-    //     // Specify the method
-    //     method: 'POST',
-    //     // A JSON payload
-    //     body: JSON.stringify({
-    //         "greeting": "Hello from the browser!"
-    //     })
-    // }).then(function (response) { // At this point, Flask has printed our JSON
-    //     return response.text();
-    // }).then(function (text) {
-    //     console.log('POST response: ');
-    //     // Should be 'OK' if everything was successful
-    //     console.log(text);
-    // });
+    // POST logic (path)
+    fetch('/data', {
+        method: 'POST',
+        body: JSON.stringify({x: centerX, y: centerY, type: 'path'})
+    }).then(function (response) { // At this point, Flask has printed our JSON
+        return response.text();
+    }).then(function (text) {
+        // console.log('POST response: ');
+        // Should be 'OK' if everything was successful
+        // console.log(text);
+    });
+    ;}, 100);
 
   this.onclick = stopTracking;
   document.querySelector('#tracking-toggle').innerHTML = 'Stop tracking';
@@ -124,7 +147,7 @@ function stopTracking() {
   clearInterval(getCoordinates)
   this.onclick = startTracking;
   document.querySelector('#tracking-toggle').innerHTML = 'Start tracking';
-  document.getElementById("anim_ball").src = "./shapes/blank.png";
+  document.getElementById("anim_ball").src = "{{ url_for('static', filename='shapes/blank.png')}}";
 };
 
 var el = document.getElementById("tracking-toggle"); 
