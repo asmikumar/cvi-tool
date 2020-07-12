@@ -131,13 +131,16 @@ $("#full2").spectrum({
 
 // Update the current slider SPEED value (each time you drag the slider handle)
 sliderSpeed.oninput = function() {
-speedModifier = 0.001*sliderSpeed.value;
+    speedModifier = 0.001*sliderSpeed.value;
+    // console.log(sliderSpeed.value);
+    document.getElementById("speed_value").innerHTML = sliderSpeed.value;
 }
 
 // Update the current slider SIZE value (each time you drag the slider handle)
 sliderSize.oninput = function(){
     document.getElementById("anim_ball").style.height = sliderSize.value.toString().concat("px");
     document.getElementById("anim_ball").style.width = sliderSize.value.toString().concat("px");
+    document.getElementById("size_value").innerHTML = sliderSize.value;
 }
 
 // select a shape from array ---------------------------------
