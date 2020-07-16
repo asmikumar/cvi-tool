@@ -8,18 +8,54 @@
 
 <p></p>
 
-<div id="spoiler"> <!-- hide/show element -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<!-- ////////////////////////////////////// -->
+
+<div id="spoiler_nav_bar"> <!-- hide/show element -->
+<nav>
+<div class="topnav" id="myTopnav">
+  <a href="cvi_pretty.html" class="active">Home</a>
+  <a href="progress.html">Progress</a>
+  <!-- <a href="#contact">Logout</a> -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div> 
+</nav>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</div> <!-- hide/show element -->
+
+<!-- ////////////////////////////////////// -->
+
+<div id="spoiler_1"> <!-- hide/show element -->
 
 <link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'> <!-- font stylesheet -->
+
 <style>
 body {
-    font-family: 'Gloria Hallelujah';font-size: 25px;
+    font-family: 'Gloria Hallelujah';font-size: 24px;
 }
 button {
     font-family : 'Gloria Hallelujah';
     font-size: 17px;
 }
 </style>
+
+<!-- ////////////////////////////////////// -->
 
 <div class="slidecontainer"> 
   <label>Speed:</label> <a id='speed_value'>125</a>
@@ -30,7 +66,6 @@ button {
   <label>Size: </label> <a id='size_value'>100</a>
   <input type="range" min="100" max="250" value="100" class="slider" id="rangeSize"> 
 </div>
-<!-- </p> -->
 
 <div class='small'>
 <label>Background color:</label>
@@ -39,29 +74,16 @@ button {
 
 <script type="text/javascript" src="./cvi_pretty.js"></script>
 
+</div> <!-- hide/show element -->
+
+<div>
+<img src="./shapes/blank.png" id="anim_ball" style="position: absolute;" height="100" width="100"> 
+</div>
+
+<div id="spoiler_2"> <!-- hide/show element -->
+
 <p style="line-height:0%;margin:0px;"><br></p>
 <div id="figures">
-
-<!-- <img src="./shapes/square_red.png" name='square_red' />
-<img src="./shapes/triangle_red.png" name='triangle_red' />
-<img src="./shapes/circle_red.png" name='circle_red' />
-<br clear="all" />
-<img src="./shapes/square_yellow.png" name='square_yellow' />
-<img src="./shapes/triangle_yellow.png" name='triangle_yellow' />
-<img src="./shapes/circle_yellow.png" name='circle_yellow' />
-<br clear="all" />
-<img src="./shapes/square_green.png" name='square_green' />
-<img src="./shapes/triangle_green.png" name='triangle_green' />
-<img src="./shapes/circle_green.png" name='circle_green' />
-<br clear="all" />
-<img src="./shapes/square_blue.png" name='square_blue' />
-<img src="./shapes/triangle_blue.png" name='triangle_blue' />
-<img src="./shapes/circle_blue.png" name='circle_blue' />
-<br clear="all" />
-<img src="./shapes/square_grayscale.png" name='square_grayscale' />
-<img src="./shapes/triangle_grayscale.png" name='triangle_grayscale' />
-<img src="./shapes/circle_grayscale.png" name='circle_grayscale' /> -->
-
 
 <label>Figure selection:</label>
 <!-- <br clear="all"> -->
@@ -86,10 +108,6 @@ button {
 
 </div>
 </div> <!-- hide/show element -->
-
-<div>
-<img src="./shapes/blank.png" id="anim_ball" style="position: absolute;" height="100" width="100"> 
-</div>
 
 <div class='small'>
 <button id="tracking-toggle" onclick="startTracking()" disabled="true" >Start tracking</button>
@@ -121,7 +139,9 @@ button {
 
 // returns an object with x and y coordinates of the center of the element
 function startTracking() {
-  document.getElementById('spoiler').style.display = 'none' // hide customizations
+  document.getElementById('spoiler_nav_bar').style.display = 'none' // hide customizations
+  document.getElementById('spoiler_1').style.display = 'none' // show customizations
+  document.getElementById('spoiler_2').style.display = 'none' // show customizations
   getCoordinates = setInterval(function(){ 
     var element = $('#anim_ball');
     var centerX = element.offset().left + element.width()/2
@@ -152,7 +172,10 @@ function startTracking() {
 };
 
 function stopTracking() {
-  document.getElementById('spoiler').style.display = '' // show customizations
+  document.getElementById('spoiler_nav_bar').style.display = '' // show customizations
+  document.getElementById('spoiler_1').style.display = '' // show customizations
+  document.getElementById('spoiler_2').style.display = '' // show customizations
+
   clearInterval(getCoordinates)
   this.onclick = startTracking;
   document.querySelector('#tracking-toggle').innerHTML = 'Start tracking';
