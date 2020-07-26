@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Profile</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Other HTML pages -->
+    <script src="./customize.html"></script>
+    <script src="./recommended.html"></script>
+    <script src="./dashboard.html"></script>
+    <script src="./logout.html"></script>
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="index.html">CVI Therapy Tool</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      	  <a class="nav-link" href="index.html" style="color: white">
+            <i class="fas fa-fw fa-user-circle"></i>
+            <span>Profile</span>
+          </a>
+
+          <a class="nav-link" href="customize.html" style="color: darkgray">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Customize</span>
+          </a>
+
+          <a class="nav-link" href="recommended.html" style="color: darkgray">
+            <i class="fas fa-fw fa-check-square"></i>
+            <span>Recommended Exercises</span>
+          </a>
+
+          <a class="nav-link" href="dashboard.html" style="color: darkgray">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a class="nav-link" href="login.html" style="color: darkgray">
+            <i class="fas fa-fw fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+        </li>
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="container">
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">User Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Doctor's Information</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h1 class="mb-3">Jane Doe</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5>Date of Birth: 02/08/2018 (2 years, 5 months)</h5>
+                            <h5>Location: 985 Peachtree Ave., Atlanta, GA 30004</h5>
+                        </div>
+                    </div>
+                    <hr>
+                    <h4><u>Parental Information</u></h4>
+                    <div class='row'>
+                    	<div class='col-md-6'>
+		                    <h5>Name: Jill Doe</h5>
+		                    <h5>Relation to child: Mother</h5>
+		                    <h5>Email: jilldoe@gmail.com</h5>
+		                    <h5>Phone number: 123-456-7890</h5>
+		                </div>
+		                <div class='col-md-6'>
+		                    <h5>Name: John Doe</h5>
+		                    <h5>Relation to child: Father</h5>
+		                    <h5>Email: johndoe@gmail.com</h5>
+		                    <h5>Phone number: 111-222-3333</h5>
+		                </div>
+                    </div>
+
+                    <!--/row-->
+                </div>
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                </td>
+                            <tr>
+                        </tbody> 
+                    </table>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <form role="form">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Jane">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Doe">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" value="email@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="" placeholder="City">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="" placeholder="State">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="" placeholder="Country">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+                            <div class="col-lg-9">
+                                <select id="user_time_zone" class="form-control" size="0">
+                                    <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                    <option value="Alaska">(GMT-09:00) Alaska</option>
+                                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                    <option value="Arizona">(GMT-07:00) Arizona</option>
+                                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                    <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                    <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="janeuser">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <input type="button" class="btn btn-primary" value="Save Changes">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+        	<br>
+        	<br>
+            <img src="./child_profile.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Upload a different photo</h6>
+            <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choose file</span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Bootstrap, from Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- Le styles -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+
+  <style>
+      body {
+          font-family: 'Segoe UI';
+      }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+
+    <div id="content">
+      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li class="active"><a href="#red" data-toggle="tab">Red</a>
+        </li>
+        <li><a href="#orange" data-toggle="tab">Orange</a>
+        </li>
+        <li><a href="#yellow" data-toggle="tab">Yellow</a>
+        </li>
+        <li><a href="#green" data-toggle="tab">Green</a>
+        </li>
+        <li><a href="#blue" data-toggle="tab">Blue</a>
+        </li>
+      </ul>
+    </div>
+    <div id="my-tab-content" class="tab-content">
+      <div class="tab-pane active" id="red">
+        <h1>Red</h1>
+        <p>red red red red red red</p>
+      </div>
+      <div class="tab-pane" id="orange">
+        <h1>Orange</h1>
+        <p>orange orange orange orange orange</p>
+      </div>
+      <div class="tab-pane" id="yellow">
+        <h1>Yellow</h1>
+        <p>yellow yellow yellow yellow yellow</p>
+      </div>
+      <div class="tab-pane" id="green">
+        <h1>Green</h1>
+        <p>green green green green green</p>
+      </div>
+      <div class="tab-pane" id="blue">
+        <h1>Blue</h1>
+        <p>blue blue blue blue blue</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+  </body>
+
+</html>

@@ -8,7 +8,7 @@
   float: left;
   display: block;
   color: black;
-  text-align: center;
+  text-align: left;
   padding: 5px 18px;
   text-decoration: none;
   font-size: 25px;
@@ -51,24 +51,30 @@
 }
 
 /* --- PROGRESS TABLE ---*/
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
-
 td {
-  border: 5px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
 th {
-  border: 5px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+/* --- NEW ADDITIONS ---*/
+.starter-chart {
+    min-width: 0;
+    height: 280px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .starter-chart {
+        margin-bottom: 0;
+    }
+
+    .hero.starter-chart {
+        grid-column: 1 / span 2;
+    }
+
 }

@@ -1,38 +1,148 @@
-// google.charts.load('current', {packages: ['corechart', 'line']});
-// google.charts.setOnLoadCallback(drawBasic);
+const client = new Keen({
+  projectId: '5368fa5436bf5a5623000000',
+  readKey: '3f324dcb5636316d6865ab0ebbbbc725224c7f8f3e8899c7733439965d6d4a2c7f13bf7765458790bd50ec76b4361687f51cf626314585dc246bb51aeb455c0a1dd6ce77a993d9c953c5fc554d1d3530ca5d17bdc6d1333ef3d8146a990c79435bb2c7d936f259a22647a75407921056'
+});
+Keen.ready(function () {
 
-// function drawBasic() {
+  // Pageviews by browser
 
-//       var data = new google.visualization.DataTable();
-//       data.addColumn('number', 'X');
-//       data.addColumn('number', 'Dogs');
+  const pageviews_timeline = new KeenDataviz({
+    container: '#chart-01',
+    title: 'Pageviews by browser',
+    type: 'area',
+    stacked: true,
+    sortGroups: 'desc'
+  });
 
-//       data.addRows([
-//         [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
-//         [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
-//         [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
-//         [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
-//         [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
-//         [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
-//         [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
-//         [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
-//         [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
-//         [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
-//         [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
-//         [66, 70], [67, 72], [68, 75], [69, 80]
-//       ]);
+  client
+    .query('count', {
+      event_collection: 'pageviews',
+      interval: 'hourly',
+      group_by: 'user.device_info.browser.family',
+      timeframe: {
+        start: '2014-05-04T00:00:00.000Z',
+        end: '2014-05-05T00:00:00.000Z'
+      }
+    })
+    .then(res => {
+      pageviews_timeline
+        .data(res)
+        .render();
+    })
+    .catch(err => {
+      pageviews_timeline.message(err.message)
+    });
 
-//       var options = {
-//         hAxis: {
-//           title: 'Time'
-//         },
-//         vAxis: {
-//           title: 'Popularity'
-//         }
-//       };
 
-//       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  // Pageviews by browser (pie)
 
-//       chart.draw(data, options);
-//     }
+  const pageviews_pie = new KeenDataviz({
+    container: '#chart-02',
+    type: 'pie',
+    title: 'Pageviews by browser',
+    sortGroups: 'desc'
+  });
 
+  client
+    .query({
+      savedQueryName: 'chart-02',
+    })
+    .then(function(results){
+      pageviews_pie
+        .render(results);
+    })
+    .catch(function(error){
+      pageviews_pie
+        .message(error.message);
+    });
+
+
+  // Impressions timeline
+
+  const impressions_timeline = new KeenDataviz({
+    container: '#chart-03',
+    title: 'Impressions by advertiser',
+    type: 'bar',
+    stacked: true,
+    sortGroups: 'desc'
+  });
+
+  client
+    .query('count', {
+      event_collection: 'impressions',
+      group_by: 'ad.advertiser',
+      interval: 'hourly',
+      timeframe: {
+        start: '2014-05-04T00:00:00.000Z',
+        end: '2014-05-05T00:00:00.000Z'
+      }
+    })
+    .then(res => {
+      impressions_timeline
+        .data(res)
+        .render();
+    })
+    .catch(err => {
+      impressions_timeline.message(err.message)
+    });
+
+  // Impressions by device
+
+  const impressions_by_device = new KeenDataviz({
+    container: '#chart-04',
+    title: 'Impressions by device',
+    type: 'bar',
+    stacked: true,
+    sortGroups: 'desc'
+  });
+
+  client
+    .query('count', {
+      event_collection: 'impressions',
+      group_by: 'user.device_info.device.family',
+      interval: 'hourly',
+      timeframe: {
+        start: '2014-05-04T00:00:00.000Z',
+        end: '2014-05-05T00:00:00.000Z'
+      }
+    })
+    .then(res => {
+      impressions_by_device
+        .data(res)
+        .render();
+    })
+    .catch(err => {
+      impressions_by_device.message(err.message)
+    });
+
+
+  // Impressions by country
+
+  const impressions_by_country = new KeenDataviz({
+    container: '#chart-05',
+    title: 'Impressions by country',
+    type: 'bar',
+    stacked: true,
+    sortGroups: 'desc'
+  });
+
+  client
+    .query('count', {
+      event_collection: 'impressions',
+      group_by: 'user.geo_info.country',
+      interval: 'hourly',
+      timeframe: {
+        start: '2014-05-04T00:00:00.000Z',
+        end: '2014-05-05T00:00:00.000Z'
+      }
+    })
+    .then(res => {
+      impressions_by_country
+        .data(res)
+        .render();
+    })
+    .catch(err => {
+      impressions_by_country.message(err.message)
+    });
+
+});

@@ -1,105 +1,73 @@
-<link rel="stylesheet" type="text/css" href="./cvi_pretty.css">
+<!DOCTYPE html>
+<html>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
-<nav>
-<div class="topnav" id="myTopnav">
-  <a href="cvi_pretty.html">Home</a>
-  <a href="progress.html" class="active">Progress</a>
-  <!-- <a href="#contact">Logout</a> -->
-  <a href="javascript:void(0);" class="icon" onclick="navbar()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-</nav>
+  <!-- keen-analysis@3 -->
+  <script src="https://cdn.jsdelivr.net/npm/keen-analysis@3" type="text/javascript"></script>
 
-<script>
-function navbar() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += "responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
+  <!-- keen-dataviz@3 -->
+  <link href="https://cdn.jsdelivr.net/npm/keen-dataviz@3/dist/keen-dataviz.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/keen-dataviz@3/dist/keen-dataviz.min.js" type="text/javascript"></script>
 
-<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'> <!-- font stylesheet -->
-<style>
-body {
-    font-family: 'Gloria Hallelujah';font-size: 24px;
-}
-button {
-    font-family : 'Gloria Hallelujah'; font-size: 17px;
-}
-</style>
-
-Progress Report:
-
-<table width=50% style="font-size:20px">
-  <tr>
-    <th>Number of Correct</th>
-    <th>Number of Incorrect</th>
-    <th>Number of Total Trials</th>
-    <th>Percent Correct (%)</th>
-  </tr>
-  <tr>
-    <td>95</td>
-    <td>5</td>
-    <td>100</td>
-    <td>95%</td>
-  </tr>
-</table>
-
-<body>
-This is a test progress.html file.
-</body>
-
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-
-<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="chart_div"></div>
-<script type="text/javascript" src="./progress.js"></script> -->
-
-<head>  
-<script>
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light2",
-	title: {
-		text: "Simple Line Chart"
-	},
-	axisY: {
-		includeZero: false
-	},
-	data: [{        
-		type: "line",
-      	indexLabelFontSize: 16,
-		dataPoints: [
-			{ y: 450 },
-			{ y: 414},
-			{ y: 520, indexLabel: "\u2191 highest", markerColor: "red", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "\u2193 lowest", markerColor: "DarkSlateGrey", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
-	}]
-});
-chart.render();
-
-}
-</script>
+  <!-- Dashboard -->
+  <link href="../../assets/css/keen-dashboards.css" rel="stylesheet" type="text/css" />
+  <link href="progress.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="progress.js"></script>
 </head>
-<body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<body class="keen-dashboard">
+
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="navbar-nav nav main-nav">
+          <li><a href="C:\Users\Agni\Documents\Asmi\Science Fair 2020-21\cvi-tool\pretty\cvi_pretty.html">Customize</a></li>
+          <li><a href="index.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container grid grid-simple-col-3">
+    <div id="chart-01" class="hero starter-chart"></div>
+    <div id="chart-02" class="starter-chart"></div>
+    <div id="chart-03" class="starter-chart"></div>
+    <div id="chart-04" class="starter-chart"></div>
+    <div id="chart-05" class="starter-chart"></div>
+  </div>
+  <div class="container">
+    <hr>
+  </div>
+
+  <!-- Project Analytics -->
+  <script type="text/javascript" src="../../assets/js/keen-analytics.js"></script>
+  <script>
+    function toggleMenu() {
+      const toggleBtn = document.querySelector('.navbar-toggle');
+
+      toggleBtn.addEventListener('click', (e) => {
+        let menu;
+        if (e.currentTarget.dataset.target) {
+          menu = document.querySelector(e.currentTarget.dataset.target);
+        }
+        if (menu) menu.classList.toggle('collapsed');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', toggleMenu);
+  </script>
 </body>
+
+</html>
