@@ -3,12 +3,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="./spectrum.js"></script>
 <script type="text/javascript" src="./cvi_app.js"></script>
+
 <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <body>
 
 </body>
+
+<a href="recommended.html"><button class='btn btn-light' id="tracking-toggle" style='font-family: "Segoe UI"; margin-left: 15px; margin-top: 15px; border-color: transparent;'>Stop Tracking</button></a>
 
 <div>
 <img src="./shapes/square_red.png" id="anim_ball" style="position: fixed;" height="200" width="200"> 
@@ -19,13 +22,13 @@
 <script type="text/javascript">
 
 // returns an object with x/y coordinates of the center of the element
-function startTracking() {
+// function startTracking() {
   setInterval(function(){ 
     var element = $('#anim_ball');
     var centerX = element.offset().left + element.width()/2
     var centerY = element.offset().top + element.height()/2
     console.log("X: " + centerX + ", Y: " + centerY);
   }, 100);
-};
+// };
 
 </script>

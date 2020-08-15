@@ -25,6 +25,7 @@
 
     <!-- Other HTML pages -->
     <script src="./index.html"></script>
+    <script src="./index_navbar.html"></script>
     <script src="./customize.html"></script>
     <script src="./dashboard.html"></script>
     <script src="./logout.html"></script>
@@ -33,15 +34,17 @@
 
   <body id="page-top">
 
+    <div id='spoiler'>
+
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">CVI Therapy Tool</a>
+      <a class="navbar-brand mr-1" href="index_navbar.html">CVI Therapy Tool</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
 
-      	  <a class="nav-link" href="index.html" style="color: darkgray">
+      	  <a class="nav-link" href="index_navbar.html" style="color: darkgray">
             <i class="fas fa-fw fa-user-circle"></i>
             <span>Profile</span>
           </a>
@@ -66,19 +69,143 @@
             <span>Logout</span>
           </a>
 
-      <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-        </li>
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-        </li>
-        <li class="nav-item dropdown no-arrow">
-          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-        </li>
-      </ul>
-
     </nav>
+
+    </div>
+
+    <div id="wrapper">
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <div id="spoiler2">
+
+          <!-- Line Chart Example -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-check-square"></i>
+                Recommended Exercises</div>
+              <div class="card-body">
+                Here is your recommended exercise based on your past performances. You must complete this before getting a new recommendation, and this page will update as you comlepte them.
+                <p></p>
+                Your recommendation is characterized by the following: speed (low, medium, high), size (small, medium large), color (red, yellow, green, blue grayscale), and shape (square, triangle, circle). Each feature represents a certain difficulty level.
+                <p></p>
+                Current recommendation: LOW speed, LARGE size, RED color, SQUARE shape
+              </div>
+            </div>
+
+          </div>
+
+           <!--  <div> --><!--  class='small' -->
+			  <!-- <button class='btn btn-light' id="tracking-toggle" onclick='location.href = "cvi_app.html"'>Start tracking</button> -->
+			<!-- </div> -->
+
+			<!-- <button class='btn btn-light' id="tracking-toggle" onclick="location.href='cvi_app.html'">Start tracking</button>
+			<input type=button class='btn btn-light' id="tracking-toggle" onclick="location.href='cvi_app.html'" value='Start tracking'> -->
+			<a href="cvi_app.html"><button class='btn btn-light' id="tracking-toggle">Start Tracking</button></a>
+
+			<!-- <script src="webgazer.js" type="text/javascript"></script> --> <!-- webgazer.js -->
+			<script type="text/javascript">
+
+			// returns an object with x and y coordinates of the center of the element
+			function startTracking() {
+			  document.getElementById('spoiler').style.display = 'none' // hide customizations
+			  document.getElementById('spoiler2').style.display = 'none' // hide customizations
+			  getCoordinates = setInterval(function(){ 
+			    var element = $('#anim_ball');
+			    var centerX = element.offset().left + element.width()/2
+			    var centerY = element.offset().top + element.height()/2
+			    // getPredictionKid();
+			    console.log("X: " + centerX + ", Y: " + centerY);}, 100);
+
+			    // POST logic
+			    // fetch('/hello', {
+			    //     // Specify the method
+			    //     method: 'POST',
+			    //     // A JSON payload
+			    //     body: JSON.stringify({
+			    //         "greeting": "Hello from the browser!"
+			    //     })
+			    // }).then(function (response) { // At this point, Flask has printed our JSON
+			    //     return response.text();
+			    // }).then(function (text) {
+			    //     console.log('POST response: ');
+			    //     // Should be 'OK' if everything was successful
+			    //     console.log(text);
+			    // });
+
+			  this.onclick = stopTracking;
+			  document.querySelector('#tracking-toggle').innerHTML = 'Stop tracking';
+			  $("#tracking-toggle").addClass("temporary");
+			  console.clear()
+			  document.getElementById("anim_ball").src = location_picked.toString();
+
+
+			};
+
+			function stopTracking() {
+			  document.getElementById('spoiler').style.display = '' // show customizations
+			  document.getElementById('spoiler2').style.display = '' // hide customizations
+
+			  clearInterval(getCoordinates)
+			  this.onclick = startTracking;
+			  document.querySelector('#tracking-toggle').innerHTML = 'Start tracking';
+			  // document.getElementById("tracking-toggle").disabled = true;
+			  document.getElementById("anim_ball").src = "./shapes/blank.png";
+			  // rangeSpeed.value = 125;
+			  // rangeSize.value = 100;
+			  // document.getElementById(speed_value) = 125;
+			  // document.getElementById(size_value) = 100;
+			  $("#figures img").css("border","5px solid transparent");
+			};
+
+			var el = document.getElementById("tracking-toggle"); 
+			el.onclick = startTracking;
+
+			</script>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+<!--         <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer> -->
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </body>
 
