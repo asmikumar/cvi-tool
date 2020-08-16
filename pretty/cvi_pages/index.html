@@ -49,9 +49,17 @@
 
     <br>
 
-    <div class="container">
-    <div class="row my-2">
-        <div class="col-lg-8 order-lg-2">
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="container">
+
+    <style>
+        img {
+          border: 5px solid lightgray;
+        }
+    </style>
+    <!-- <div class="row my-2"> -->
+        <!-- <div class="col-lg-8 order-lg-2"> -->
             <ul class="nav nav-tabs">
                 <li class="nav-item active">
                     <a href="" data-target="#profile" data-toggle="tab" class="nav-link">User Profile</a>
@@ -63,8 +71,21 @@
                     <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
                 </li>
             </ul>
-            <div class="tab-content py-4">
-                <div class="tab-pane active" id="profile">
+
+    <div class="tab-content">
+
+        <div class="tab-pane fade in active" id="profile">
+    
+            <div class="row">
+
+                <div class="col-lg-4 text-center">
+                    <br>
+                    <br>
+                    <img src="./child.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                </div>
+
+                <div class="col-lg-8">
+            
                     <h1 class="mb-3">Jane Doe</h1>
                     <div class="row">
                         <div class="col-md-8">
@@ -75,107 +96,105 @@
                     <hr>
                     <h3><u>Parental Information</u></h3>
                     <div class='row'>
-                    	<div class='col-md-6'>
-		                    <h4>Name: Jill Doe</h4>
-		                    <h4>Relation to child: Mother</h4>
-		                    <h4>Email: jilldoe@gmail.com</h4>
-		                    <h4>Phone number: 123-456-7890</h4>
-		                </div>
-		                <div class='col-md-6'>
-		                    <h4>Name: John Doe</h4>
-		                    <h4>Relation to child: Father</h4>
-		                    <h4>Email: johndoe@gmail.com</h4>
-		                    <h4>Phone number: 111-222-3333</h4>
-		                </div>
-                    </div>
-
-                    <!--/row-->
-                </div>
-                <div class="tab-pane" id="messages">
-                    <h1 class="mb-3">Mark Smith</h1>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h4>Location: 120 Parkview Dr., Atlanta, GA 30004</h4>
-                            <h4>Email: drmarksmith@gmail.com</h4>
-                            <h4>Phone number: 444-555-6666</h4>
+                        <div class='col-md-6'>
+                            <h4>Name: Jill Doe</h4>
+                            <h4>Relation to child: Mother</h4>
+                            <h4>Email: jilldoe@gmail.com</h4>
+                            <h4>Phone number: 123-456-7890</h4>
+                        </div>
+                        <div class='col-md-6'>
+                            <h4>Name: John Doe</h4>
+                            <h4>Relation to child: Father</h4>
+                            <h4>Email: johndoe@gmail.com</h4>
+                            <h4>Phone number: 111-222-3333</h4>
                         </div>
                     </div>
-                    <hr>
-                    <h4>Here are your doctor's initial recommendations:</h4>
-                    Jane has a case of CVI that is treatable with online therapy, but she must start from early levels to improve her condition. Please review the following initial recommendations I have made.
-
-                    <style>
-                    	.radio[disabled] {
-    						color: "red";
-						}			
-                    </style>
-
-
-
-                    <div clas='row'>
-                    	<div class='col-md-3'>
-                    		<h5><u>Speed</u></h5>
-	                			<label class="radio" style='color: red'><input type="radio" name="speed" checked disabled>Low</label>
-								<label class="radio"><input type="radio" name="speed" disabled>Medium</label>
-								<label class="radio"><input type="radio" name="speed" disabled>High</label>
-						</div>
-						<div class='col-md-3'>
-                    		<h5><u>Size</u></h5>
-	                			<label class="radio"><input type="radio" name="size" disabled>Small</label>
-								<label class="radio"><input type="radio" name="size" disabled>Medium</label>
-								<label class="radio" style='color: red'><input type="radio" name="size" checked disabled>Large</label>
-						</div>
-						<div class='col-md-3'>
-                    		<h5><u>Color</u></h5>
-	                			<label class="radio" style='color: red'><input type="radio" name="color" checked disabled>Red</label>
-								<label class="radio"><input type="radio" name="color" disabled>Yellow</label>
-								<label class="radio"><input type="radio" name="color" disabled>Green</label>
-								<label class="radio"><input type="radio" name="color" disabled>Blue</label>
-								<label class="radio"><input type="radio" name="color" disabled>Grayscale</label>
-						</div>
-						<div class='col-md-3'>
-                    		<h5><u>Shape</u></h5>
-	                			<label class="radio" style='color: red'><input type="radio" name="shape" checked disabled>Square</label>
-								<label class="radio"><input type="radio" name="shape" disabled>Triangle</label>
-								<label class="radio"><input type="radio" name="shape" disabled>Circle</label>
-						</div>
-					</div>
-                    <!-- <table class="table table-bordered"> 
-					  <thead>
-					    <tr>
-					      <th scope="col"></th>
-					      <th scope="col">Speed</th>
-					      <th scope="col">Size</th>
-					      <th scope="col">Color</th>
-					      <th scope="col">Shape</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">Low</th>
-					      <td class='success'><span style="float:center;"><i class="fa fa-check"></i></span></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					    </tr>
-					    <tr>
-					      <th scope="row">Medium</th>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					    </tr>
-					    <tr>
-					      <th scope="row">High</th>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					      <td></td>
-					    </tr>
-					  </tbody>
-					</table> -->
                 </div>
-                <div class="tab-pane" id="edit">
+            </div>
+        </div>
+
+                        <!--/row-->
+        <div class="tab-pane fade" id="messages">
+
+            <div class='row'>
+
+                <div class="col-lg-4 text-center">
+                    <br>
+                    <br>
+                    <img src="./doctor.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                </div>
+
+                <div class='col-lg-8'>
+                    
+                        <h1 class="mb-3">Mark Smith</h1>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4>Location: 120 Parkview Dr., Atlanta, GA 30004</h4>
+                                <h4>Email: drmarksmith@company.com</h4>
+                                <h4>Phone number: 444-555-6666</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>Here are your doctor's initial recommendations:</h4>
+                        Jane has a case of CVI that is treatable with online therapy, but she must start from early levels to improve her condition. Please review the following initial recommendations I have made.
+
+                        <style>
+                            .radio[disabled] {
+                                color: "red";
+                            }           
+                        </style>
+
+                        <div clas='row'>
+                            <div class='col-md-3'>
+                                <h5><u>Speed</u></h5>
+                                    <label class="radio" style='color: red'><input type="radio" name="speed" checked disabled>Low</label>
+                                    <label class="radio"><input type="radio" name="speed" disabled>Medium</label>
+                                    <label class="radio"><input type="radio" name="speed" disabled>High</label>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5><u>Size</u></h5>
+                                    <label class="radio"><input type="radio" name="size" disabled>Small</label>
+                                    <label class="radio"><input type="radio" name="size" disabled>Medium</label>
+                                    <label class="radio" style='color: red'><input type="radio" name="size" checked disabled>Large</label>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5><u>Color</u></h5>
+                                    <label class="radio" style='color: red'><input type="radio" name="color" checked disabled>Red</label>
+                                    <label class="radio"><input type="radio" name="color" disabled>Yellow</label>
+                                    <label class="radio"><input type="radio" name="color" disabled>Green</label>
+                                    <label class="radio"><input type="radio" name="color" disabled>Blue</label>
+                                    <label class="radio"><input type="radio" name="color" disabled>Grayscale</label>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5><u>Shape</u></h5>
+                                    <label class="radio" style='color: red'><input type="radio" name="shape" checked disabled>Square</label>
+                                    <label class="radio"><input type="radio" name="shape" disabled>Triangle</label>
+                                    <label class="radio"><input type="radio" name="shape" disabled>Circle</label>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="edit">
+
+            <div class='row'>
+
+                <div class="col-lg-4 text-center">
+                    <br>
+                    <br>
+                    <img src="./child.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                    <!-- <h6 class="mt-2">Upload a different photo</h6> -->
+                    <label class="custom-file">
+                        <input type="file" id="file" class="custom-file-input">
+                        <span class="custom-file-control">Choose profile picture</span>
+                    </label>
+                </div>
+
+                <div class='col-lg-8'>
+
+                    <br>
+                
                     <form role="form">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">First name</label>
@@ -248,19 +267,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 order-lg-1 text-center">
-        	<br>
-        	<br>
-            <img src="./child_profile.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-            <h6 class="mt-2">Upload a different photo</h6>
-            <label class="custom-file">
-                <input type="file" id="file" class="custom-file-input">
-                <span class="custom-file-control">Choose file</span>
-            </label>
-        </div>
     </div>
-	</div>
+</div>
 
-<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
 </body>
 </html>
