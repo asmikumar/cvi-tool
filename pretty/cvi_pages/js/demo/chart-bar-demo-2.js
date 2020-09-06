@@ -7,12 +7,12 @@ var ctx = document.getElementById("barShape");
 var barShape = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Square", "Triangle", "Circle"],
     datasets: [{
-      label: "Revenue",
-      backgroundColor: "rgba(2,117,216,1)",
+      label: "Average Score",
+      backgroundColor: "#1e90ff",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: [78, 60, 71],
     }],
   },
   options: {
@@ -21,18 +21,24 @@ var barShape = new Chart(ctx, {
         time: {
           unit: 'month'
         },
+        scaleLabel: {
+          display: true,
+          labelString: 'Shape'
+        },
         gridLines: {
           display: false
-        },
-        ticks: {
-          maxTicksLimit: 6
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
-          maxTicksLimit: 5
+          max: 100,
+          stepSize: 10,
+          maxTicksLimit: 11
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'Average Score (%)'
         },
         gridLines: {
           display: true

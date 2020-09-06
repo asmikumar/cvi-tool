@@ -7,9 +7,9 @@ var ctx = document.getElementById("lineProgress");
 var lineProgress = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
     datasets: [{
-      label: "Sessions",
+      label: "Score",
       lineTension: false,
       fill: false,
       backgroundColor: "rgba(2,117,216,0.2)",
@@ -21,31 +21,40 @@ var lineProgress = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 20162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: [41, 53, 59, 62, 70, 65, 67, 66, 76, 80, 76, 77, 82, 81, 84],
     }],
   },
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'date'
+        // time: {
+        //   unit: 'date'
+        // },
+        scaleLabel: {
+          display: true,
+          labelString: 'Session Number'
         },
         gridLines: {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          stepSize: 1
         }
       }],
       yAxes: [{
-        ticks: {
-          min: 0,
-          max: 40000,
-          maxTicksLimit: 10
+        scaleLabel: {
+          display: true,
+          labelString: 'Score (%)'
         },
         gridLines: {
           color: "rgba(0, 0, 0, .125)",
-        }
+        },
+        ticks: {
+          beginAtZero: true,
+          steps: 11,
+          stepSize: 10,
+          max: 100,
+        },
       }],
     },
     legend: {

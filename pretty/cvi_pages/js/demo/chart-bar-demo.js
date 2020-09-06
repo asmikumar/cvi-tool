@@ -7,19 +7,22 @@ var ctx = document.getElementById("barColor");
 var barColor = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Red", "Yellow", "Green", "Blue", "Grayscale"],
     datasets: [{
-      label: "Revenue",
-      backgroundColor: "rgba(2,117,216,1)",
-      borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      label: "Score",
+      backgroundColor: ['red', '#ffee17', '#5dbb63', '#1167b1', '#d3d3d3'],
+      data: [80, 77, 56, 58, 26],
     }],
   },
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'month'
+        // time: {
+        //   unit: 'month'
+        // },
+        scaleLabel: {
+          display: true,
+          labelString: 'Color'
         },
         gridLines: {
           display: false
@@ -31,8 +34,13 @@ var barColor = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
-          maxTicksLimit: 5
+          max: 100,
+          stepSize: 10,
+          maxTicksLimit: 11
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'Average Score (%)'
         },
         gridLines: {
           display: true
