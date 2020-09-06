@@ -36,44 +36,171 @@
 
     <div id='spoiler'>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+          <style>
+	      		body {
+				  /*margin: 0;*/
+				  font-family: 'Segoe UI';
+				  /*background-color: #f4f4f4;*/
+				}
 
-      <a class="navbar-brand mr-1" href="index_navbar.html">CVI Therapy Tool</a>
+				a {
+				  color: white;
+				}
 
-      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-        <i class="fas fa-bars"></i>
-      </button>
+				/* header */
 
-      	  <a class="nav-link" href="index_navbar.html" style="color: darkgray">
-            <i class="fas fa-fw fa-user-circle"></i>
-            <span>Profile</span>
-          </a>
+				.header {
+				  background-color: #383838;
+				  color: white;
+				  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+				  position: fixed;
+				  width: 100%;
+				  z-index: 3;
+				}
 
-          <a class="nav-link" href="customize.html" style="color: darkgray">
-            <i class="fas fa-fw fa-cogs"></i>
-            <span>Customize</span>
-          </a>
+				.header ul {
+				  margin: 0;
+				  padding: 0;
+				  list-style: none;
+				  overflow: hidden;
+				  background-color: #383838;
+				}
 
-          <a class="nav-link" href="recommended.html" style="color: white">
-            <i class="fas fa-fw fa-check-square"></i>
-            <span>Recommended Exercises</span>
-          </a>
+				.header li a {
+				  display: block;
+				  color: white;
+				  font-size: 16px;
+				  padding: 12px 20px;
+				  /*border-right: 1px solid #f4f4f4;*/
+				  text-decoration: none;
+				}
 
-          <a class="nav-link" href="dashboard.html" style="color: darkgray">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
+				/*.header li a:hover,
+				.header .menu-btn:hover {
+				  background-color: #f4f4f4;
+				}*/
 
-          <a class="nav-link" href="login.html" style="color: darkgray">
-            <i class="fas fa-fw fa-sign-out-alt"></i>
-            <span>Logout</span>
-          </a>
+				.header .logo {
+				  display: block;
+				  float: left;
+				  font-size: 22px;
+				  padding: 12px 20px;
+				  text-decoration: none;
+				}
 
-    </nav>
+				/* menu */
+
+				.header .menu {
+				  clear: both;
+				  max-height: 0;
+				  transition: max-height .2s ease-out;
+				}
+
+				/* menu icon */
+
+				.header .menu-icon {
+				  cursor: pointer;
+				  display: inline-block;
+				  float: right;
+				  /*padding: 20px 20px;*/
+				  padding-top: 27px;
+				  padding-right: 20px;
+				  position: relative;
+				  user-select: none;
+				}
+
+				.header .menu-icon .navicon {
+				  background: white;
+				  display: block;
+				  height: 2px;
+				  position: relative;
+				  transition: background .2s ease-out;
+				  width: 20px;
+				}
+
+				.header .menu-icon .navicon:before,
+				.header .menu-icon .navicon:after {
+				  background: white;
+				  content: '';
+				  display: block;
+				  height: 100%;
+				  position: absolute;
+				  transition: all .2s ease-out;
+				  width: 100%;
+				}
+
+				.header .menu-icon .navicon:before {
+				  top: 6px;
+				}
+
+				.header .menu-icon .navicon:after {
+				  top: -6px;
+				}
+
+				/* menu btn */
+
+				.header .menu-btn {
+				  display: none;
+				}
+
+				.header .menu-btn:checked ~ .menu {
+				  max-height: 400px;
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon {
+				  background: transparent;
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon:before {
+				  transform: rotate(-45deg);
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon:after {
+				  transform: rotate(45deg);
+				}
+
+				.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+				.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+				  top: 0;
+				}
+
+				/* 48em = 768px */
+
+				@media (min-width: 60em) {
+				  .header li {
+				    float: left;
+				  }
+				  .header li a {
+				    padding: 16px 20px;
+				  }
+				  .header .menu {
+				    clear: none;
+				    float: right;
+				    max-height: none;
+				  }
+				  .header .menu-icon {
+				    display: none;
+				  }
+				}
+
+			</style>
+
+          <header class="header">
+			  <a href="index_navbar.html" class="logo">CVI Therapy</a>
+			  <input class="menu-btn" type="checkbox" id="menu-btn" />
+			  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+			  <ul class="menu">
+			    <li><a href="index_navbar.html" style="color: darkgray"><i class="fas fa-fw fa-user-circle"></i> Profile</a></li>
+			    <li><a href="customize.html" style="color: darkgray"><i class="fas fa-fw fa-cogs"></i> Customize</a></li>
+			    <li><a href="recommended.html"><i class="fas fa-fw fa-check-square"></i> Recommended Exercises</a></li>
+			    <li><a href="dashboard.html" style="color: darkgray"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+			    <li><a href="login.html" style="color: darkgray"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
+			  </ul>
+		  </header>
 
     </div>
 
-    <div id="wrapper">
+    <div id="wrapper" style='padding-top: 57px'>
 
       <div id="content-wrapper">
 
@@ -89,7 +216,7 @@
               <div class="card-body">
                 Here is your recommended exercise based on your past performances. You must complete this before getting a new recommendation, and this page will update as you comlepte them.
                 <p></p>
-                Your recommendation is characterized by the following: speed (low, medium, high), size (small, medium large), color (red, yellow, green, blue grayscale), and shape (square, triangle, circle). Each feature represents a certain difficulty level.
+                Your recommendation is characterized by the following: speed (low, medium, high), size (small, medium large), color (red, yellow, green, blue, grayscale), and shape (square, triangle, circle). Each feature represents a certain difficulty level.
                 <p></p>
                 Current recommendation: LOW speed, LARGE size, RED color, SQUARE shape
               </div>
@@ -103,7 +230,7 @@
 
 			<!-- <button class='btn btn-light' id="tracking-toggle" onclick="location.href='cvi_app.html'">Start tracking</button>
 			<input type=button class='btn btn-light' id="tracking-toggle" onclick="location.href='cvi_app.html'" value='Start tracking'> -->
-			<a href="cvi_app.html"><button class='btn btn-light' id="tracking-toggle">Start Tracking</button></a>
+			<a href="cvi_app.html"><button class='btn btn-light' id="tracking-toggle">Start</button></a>
 
 			<!-- <script src="webgazer.js" type="text/javascript"></script> --> <!-- webgazer.js -->
 			<script type="text/javascript">
