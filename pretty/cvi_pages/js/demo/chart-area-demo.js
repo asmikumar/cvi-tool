@@ -9,7 +9,7 @@ var lineProgress = new Chart(ctx, {
   data: {
     labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
     datasets: [{
-      label: "Score",
+      label: "Average Score",
       lineTension: false,
       fill: false,
       backgroundColor: "rgba(2,117,216,0.2)",

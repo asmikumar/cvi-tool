@@ -9,17 +9,24 @@ var scatterSize = new Chart(ctx, {
   data: {
             datasets: [{
                 label: 'Scatter Dataset',
-                pointBackgroundColor: ['yellow', 'blue', 'red', 'green', 'orange', 'indigo'],
+                pointBackgroundColor: ['#5dbb63', '#5dbb63', '#ffee17', '#ffee17', '#ffee17', '#ffee17', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red'],
+                // small = 100 - <150, medium = 150 - <200, large = 200 - 250
                 data: [
-                  { x: 10, y: 0 }, 
-                    { x: 0, y: 10 }, 
-                    { x: 3, y: 8 }, 
-                    { x: 1, y: 5 }, 
-                    { x: 4, y: 5 },
-                    { x: 9, y: 1 }, 
-                    { x: 8, y: 3 }, 
-                    { x: 5, y: 6 }, 
-                    { x: 1, y: 6 }
+                    { x: 120, y: 24 }, 
+                    { x: 120, y: 10 }, 
+                    { x: 170, y: 62 }, 
+                    { x: 150, y: 52 }, 
+                    { x: 150, y: 55 },
+                    { x: 150, y: 61 }, 
+                    { x: 245, y: 77 }, 
+                    { x: 250, y: 72 }, 
+                    { x: 250, y: 75 },
+                    { x: 250, y: 68 },
+                    { x: 250, y: 79 },
+                    { x: 210, y: 72 },
+                    { x: 225, y: 76 },
+                    { x: 250, y: 80 },
+                    { x: 230, y: 77 },
                 ]
             }]
         },
@@ -32,9 +39,32 @@ var scatterSize = new Chart(ctx, {
                     type: 'linear',
                     position: 'bottom',
                     ticks: {
-                    beginAtZero: true
+                      beginAtZero: false,
+                      steps: 17,
+                      stepSize: 10,
+                      min: 100,
+                      max: 250,
+                    },
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Size (px)'
+                    },
+                }],
+                yAxes: [{
+                    type: 'linear',
+                    position: 'bottom',
+                    ticks: {
+                      steps: 11,
+                      stepSize: 10,
+                      min: 0,
+                      max: 100,
+                    },
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Score (%)'
                     }
                 }]
             }
         }
+
     });

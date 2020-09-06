@@ -9,7 +9,7 @@ var barColor = new Chart(ctx, {
   data: {
     labels: ["Red", "Yellow", "Green", "Blue", "Grayscale"],
     datasets: [{
-      label: "Score",
+      label: "Average Score",
       backgroundColor: ['red', '#ffee17', '#5dbb63', '#1167b1', '#d3d3d3'],
       data: [80, 77, 56, 58, 26],
     }],
