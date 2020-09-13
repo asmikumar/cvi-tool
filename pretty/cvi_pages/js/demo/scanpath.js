@@ -6,7 +6,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 var scanpathChart = document.getElementById("scanpath");
 
 var dataFirst = {
-    label: "Child",
+    label: "Patient",
     // data: [0, 59, 75, 20, 20, 55, 40],
     data: [
                   { x: 100, y: 30 }, 
@@ -28,7 +28,7 @@ var dataFirst = {
   };
 
 var dataSecond = {
-    label: "Computer",
+    label: "Object",
     data: [
                   { x: 80, y: 100 }, 
                     { x: 0, y: 241 }, 
@@ -49,7 +49,6 @@ var dataSecond = {
   };
 
 var data = {
-  // labels: ["80", "160", "240", "320", "400", "480", "560", "640", "720", "800", "880", "960", "1040", "1120", "1200", "1280"],
   datasets: [dataFirst, dataSecond]
 };
 

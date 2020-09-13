@@ -324,7 +324,7 @@
                                 <i class="fas fa-fw fa-clock"></i>
                               </div>
                               <div class="mr-5">Total Practice Time:</div>
-                              <div class="mr-5" style="font-size: 50px">1 hours, 27 minutes</div>
+                              <div class="mr-5" style="font-size: 50px">1 hour, 27 minutes</div>
                             </div>
                           </div>
                         <!-- </div> -->
@@ -350,6 +350,34 @@
 
         </div>
 
+            <!-- <p></p>
+            <h4>Proficiency</h4>
+            <style>
+              hr.new {
+                    border: 2px solid #0066ff;
+                  }
+            </style>
+
+            <hr class="new">
+            <p></p> -->
+
+
+            <!-- Tab links -->
+            <p></p>
+            <div class="tab-1" style='border-radius: 4px;'>
+              <div style="font-family: 'Segoe UI'; font-size: 22px; padding: 8px">Proficiency</div>
+            </div>
+            <p></p>
+
+            <style>
+                /* Style the tab */
+              .tab {
+                overflow: hidden;
+                border: 1px solid #92bec3;
+                background-color: #dceaec;
+              }
+
+            </style>
 
           <!-- Line Chart Example -->
             <div class="card mb-3">
@@ -413,26 +441,61 @@
             </div>
           </div>
 
+
+          <p></p>
+
+          <div class="row">
+            <div class='col-lg-10'>
+              <div class="tab" style='border-radius: 4px;'>
+                <div style="font-family: 'Segoe UI'; font-size: 22px; padding: 8px">Grades</div>
+              </div>
+            </div>
+
+            <div class='col-lg-2' style='float: right' >
+              <div class="tab" style='border-radius: 4px;'>
+              <div style="font-family: 'Segoe UI'; font-size: 16px; padding: 8px">
+                <label for="threshold">Threshold:</label>
+                <select id="thresholdSelect">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70" selected>70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+              </div>
+              </div>
+            </div>
+
+          </div>
+
+            <p></p>
+
           <!-- Donut Chart Example -->
           <div class="row">
             <div class="col-lg-6">
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-pie"></i>
-                  Donut Chart Example</div>
-                <div class="card-body">
+                  Color</div>
+                <div class="card-body" id="container-pieColor">
                   <canvas id="pieColor" width="100%" height="50"></canvas>
                 </div>
               </div>
             </div>
 
-            <!-- Donut Chart Example -->
-            <div class="col-lg-6">
+          <!-- Donut Chart Example -->
+          <div class="col-lg-6">
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-pie"></i>
-                  Donut Chart Example</div>
-                <div class="card-body">
+                  Shape</div>
+                <div class="card-body" id="container-pieShape">
                   <canvas id="pieShape" width="100%" height="50"></canvas>
                 </div>
               </div>
@@ -445,8 +508,8 @@
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-pie"></i>
-                  Donut Chart Example</div>
-                <div class="card-body">
+                  Size</div>
+                <div class="card-body" id="container-pieSize">
                   <canvas id="pieSize" width="100%" height="50"></canvas>
                 </div>
               </div>
@@ -457,19 +520,51 @@
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-pie"></i>
-                  Donut Chart Example</div>
-                <div class="card-body">
+                  Speed</div>
+                <div class="card-body" id="container-pieSpeed">
                   <canvas id="pieSpeed" width="100%" height="50"></canvas>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- TRIAL /////////////////////////////////////////////////////////////////////////////////-->
+
+          <!-- <div class="row">
+            <div class="col-lg-6">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fas fa-chart-pie"></i>
+                  Color</div>
+                <div class="card-body">
+                  <canvas id="pieColor2" width="100%" height="50"></canvas>
+                </div>
+              </div>
+            </div> -->
+
+          <!-- Donut Chart Example -->
+          <!-- <div class="col-lg-6">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fas fa-chart-pie"></i>
+                  Shape</div>
+                <div class="card-body">
+                  <select id="dataType">
+                    <option value="dataDaily">Daily</option>
+                    <option value="dataWeekly">Weekly</option>
+                    <option value="dataMonthly">Monthly</option>
+                  </select>
+                  <canvas id="pieShape2" width="100%" height="50"></canvas>
+                </div>
+              </div>
+            </div>
+
+            </div> -->
+
         </div>
-        <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
-<!--         <footer class="sticky-footer">
+          <!-- <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright © Your Website 2018</span>
@@ -487,25 +582,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -534,6 +610,8 @@
     <script src="js/demo/chart-pie-demo-2.js"></script>
     <script src="js/demo/chart-pie-demo-3.js"></script>
     <script src="js/demo/chart-pie-demo-4.js"></script>
+    <!-- <script src="js/demo/chart-pie-demo-5.js"></script>
+    <script src="js/demo/chart-pie-demo-6.js"></script> -->
 
   </body>
 
