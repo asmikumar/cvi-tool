@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Profile</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <!-- Other HTML pages -->
+    <script src="./customize.html"></script>
+    <script src="./recommended.html"></script>
+    <script src="./dashboard.html"></script>
+    <script src="./logout.html"></script>
+
+  </head>
+
+  <body id="page-top">  
+
+<!-- <nav> [IN index_navbar.html] </nav> -->
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+    body {
+    	font-family: 'Open Sans';
+    }
+    </style>
+
+    <br>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="container" style='padding-top: 55px'>
+
+    <style>
+        img {
+          border: 5px solid lightgray;
+        }
+    </style>
+    <!-- <div class="row my-2"> -->
+        <!-- <div class="col-lg-8 order-lg-2"> -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item active">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link">Patient Profile</a>
+                </li>
+                <li class="nav-item" onclick='reset()'>
+                    <a href="" data-target="#doctor" data-toggle="tab" class="nav-link">Doctor's Information</a>
+                </li>
+            </ul>
+
+    <div class="tab-content">
+
+        <div class="tab-pane fade in active" id="profile">
+    
+            <div class="row">
+
+                <div id='profile_content'>
+
+                <div class="col-lg-4 text-center">
+                    <br>
+                    <br>
+                    <img src="./child.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                </div>
+
+                <div class="col-lg-8">
+            
+                    <h1 class="mb-3">Jane Doe</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>Date of Birth: 02/08/2018 (2 years, 5 months)</h4>
+                            <h4>Location: 985 Peachtree Ave., Atlanta, GA 30004</h4>
+                        </div>
+                    </div>
+                    <h4><u>Parental Information</u></h4>
+                    <div class='row'>
+                        <div class='col-md-4'>
+                            <h5>Name: Jill Doe</h5>
+                            <h5>Relation to child: Mother</h5>
+                            <h5>Email: jilldoe@gmail.com</h5>
+                            <h5>Phone number: 123-456-7890</h5>
+                        </div>
+                        <div class='col-md-7'>
+                            <h5>Name: John Doe</h5>
+                            <h5>Relation to child: Father</h5>
+                            <h5>Email: johndoe@gmail.com</h5>
+                            <h5>Phone number: 111-222-3333</h5>
+                        </div>
+                        <div class='col-md-1'>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <!-- <h5 style='color: transparent'>.</h5>
+                            <h4 style='color: transparent'>.</h4> -->
+                            <button class='btn btn-light' id="editContent" onclick='editContent()' style='float: right; border-color: transparent;'>Edit profile</button>
+                            
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- <p></p> -->
+                    <h4><u>Training Sessions</u></h4>
+                      <input type="checkbox" id="training1" name="training1" checked disabled>
+                      <label for="vehicle1" style='font-weight: normal'>Training 1 Completion: <b>MEDIUM</b> speed, <b>LARGE</b> size, <b>BLUE</b> color, <b>TRIANGLE</b> shape</label><br>
+                      <input type="checkbox" id="training2" name="training2" checked disabled>
+                      <label for="vehicle2" style='font-weight: normal'>Training 2 Completion: <b>LOW</b> speed, <b>MEDIUM</b> size, <b>YELLOW</b> color, <b>CIRCLE</b> shape</label><br>
+
+                </div>
+
+                </div>
+                
+                <div id='edit_content' style='display: none'>
+
+                <div class="col-lg-4 text-center">
+                    <br>
+                    <br>
+                    <img src="./child.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                    <!-- <h6 class="mt-2">Upload a different photo</h6> -->
+                    <label class="custom-file">
+                        <input type="file" id="file" class="custom-file-input">
+                        <span class="custom-file-control">Choose profile picture</span>
+                    </label>
+                </div>
+
+                <div class='col-lg-8'>
+
+                    <br>
+                
+                    <form role="form">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Jane" disabled="true">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Doe" disabled="true">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Date of Birth</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="02/08/2018" disabled="true">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Parent 1</label>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="email" value="Jill Doe" disabled="true">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="email" value="jilldoe@gmail.com">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="123-456-7890">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Parent 2</label>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="email" value="John Doe" disabled="true">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="email" value="johndoe@gmail.com">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="email" value="111-222-3333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Location</label>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="Atlanta">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="GA">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="United States">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Cancel" onclick='profileContent()'>
+                                <input type="button" class="btn btn-primary" value="Save Changes" onclick='profileContent()'>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script type="text/javascript">
+            function editContent() {
+                document.getElementById('profile_content').style.display = 'none';
+                document.getElementById('edit_content').style.display = '';
+            };
+            function profileContent() {
+                document.getElementById('profile_content').style.display = '';
+                document.getElementById('edit_content').style.display = 'none';
+            };
+        </script>
+
+        <div class="tab-pane fade" id="doctor">
+
+            <script type="text/javascript">
+                function reset() {
+                    document.getElementById('profile_content').style.display = '';
+                    document.getElementById('edit_content').style.display = 'none';
+                };
+            </script>
+
+            <div class='row'>
+
+                <div class="col-lg-4 text-center">
+                    <br>
+                    <br>
+                    <img src="./doctor.png" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                </div>
+
+                <div class='col-lg-8'>
+                    
+                        <h1 class="mb-3">Mark Smith</h1>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4>Location: 120 Parkview Dr., Atlanta, GA 30004</h4>
+                                <h4>Email: drmarksmith@company.com</h4>
+                                <h4>Phone number: 444-555-6666</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>Here are your doctor's initial recommendations:</h4>
+                        <h5 style='display: inline'><u>Initial CVI level:</u><span style="padding-left: 8px;"></h5>
+                            <label class="radio-inline"><input type="radio" name="level" disabled>Low</label>
+                            <label class="radio-inline" style='color: red; font-weight: bold'><input type="radio" name="level" checked disabled>Medium</label>
+                            <label class="radio-inline"><input type="radio" name="level" disabled>High</label>
+                            <p></p>
+                            Please review the following initial recommendations I have made.
+
+                        <style>
+                            .radio[disabled] {
+                                color: "red";
+                            }           
+                        </style>
+
+                        <div clas='row'>
+                            <div class='col-md-3'>
+                                <h5><u>Speed</u></h5>
+                                    <label class="radio" style='color: red'><input type="radio" name="speed" checked disabled>Low</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="speed" disabled>Medium</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="speed" disabled>High</label>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5><u>Size</u></h5>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="size" disabled>Small</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="size" disabled>Medium</label>
+                                    <label class="radio" style='color: red'><input type="radio" name="size" checked disabled>Large</label>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5><u>Color</u></h5>
+                                    <label class="radio" style='color: red'><input type="radio" name="color" checked disabled>Red</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="color" disabled>Yellow</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="color" disabled>Green</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="color" disabled>Blue</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="color" disabled>Grayscale</label>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5><u>Shape</u></h5>
+                                    <label class="radio" style='color: red'><input type="radio" name="shape" checked disabled>Square</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="shape" disabled>Triangle</label>
+                                    <label class="radio" style='font-weight: normal'><input type="radio" name="shape" disabled>Circle</label>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

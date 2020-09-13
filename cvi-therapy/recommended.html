@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Recommended Exercises</title>
+
+    <!-- Page level plugin JavaScript-->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    
+
+<!--     //////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Other HTML pages -->
+    <script src="./index_content.html"></script>
+    <script src="./index.html"></script>
+    <script src="./customize.html"></script>
+    <script src="./dashboard.html"></script>
+    <script src="./logout.html"></script>
+
+  </head>
+
+  <body id="page-top">
+
+    <div id='spoiler'>
+
+          <style>
+	      		body {
+				  /*margin: 0;*/
+				  font-family: 'Open Sans';
+				  /*background-color: #f4f4f4;*/
+				}
+
+				a {
+				  color: white;
+				}
+
+				/* header */
+
+				.header {
+				  background-color: #383838;
+				  color: white;
+				  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+				  position: fixed;
+				  width: 100%;
+				  z-index: 3;
+				}
+
+				.header ul {
+				  margin: 0;
+				  padding: 0;
+				  list-style: none;
+				  overflow: hidden;
+				  background-color: #383838;
+				}
+
+				.header li a {
+				  display: block;
+				  color: white;
+				  font-size: 16px;
+				  padding: 12px 20px;
+				  /*border-right: 1px solid #f4f4f4;*/
+				  text-decoration: none;
+				}
+
+				/*.header li a:hover,
+				.header .menu-btn:hover {
+				  background-color: #f4f4f4;
+				}*/
+
+				.header .logo {
+				  display: block;
+				  float: left;
+				  font-size: 22px;
+				  padding: 12px 20px;
+				  text-decoration: none;
+				}
+
+				/* menu */
+
+				.header .menu {
+				  clear: both;
+				  max-height: 0;
+				  transition: max-height .2s ease-out;
+				}
+
+				/* menu icon */
+
+				.header .menu-icon {
+				  cursor: pointer;
+				  display: inline-block;
+				  float: right;
+				  /*padding: 20px 20px;*/
+				  padding-top: 27px;
+				  padding-right: 20px;
+				  position: relative;
+				  user-select: none;
+				}
+
+				.header .menu-icon .navicon {
+				  background: white;
+				  display: block;
+				  height: 2px;
+				  position: relative;
+				  transition: background .2s ease-out;
+				  width: 20px;
+				}
+
+				.header .menu-icon .navicon:before,
+				.header .menu-icon .navicon:after {
+				  background: white;
+				  content: '';
+				  display: block;
+				  height: 100%;
+				  position: absolute;
+				  transition: all .2s ease-out;
+				  width: 100%;
+				}
+
+				.header .menu-icon .navicon:before {
+				  top: 6px;
+				}
+
+				.header .menu-icon .navicon:after {
+				  top: -6px;
+				}
+
+				/* menu btn */
+
+				.header .menu-btn {
+				  display: none;
+				}
+
+				.header .menu-btn:checked ~ .menu {
+				  max-height: 400px;
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon {
+				  background: transparent;
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon:before {
+				  transform: rotate(-45deg);
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon:after {
+				  transform: rotate(45deg);
+				}
+
+				.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+				.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+				  top: 0;
+				}
+
+				/* 48em = 768px */
+
+				@media (min-width: 60em) {
+				  .header li {
+				    float: left;
+				  }
+				  .header li a {
+				    padding: 16px 20px;
+				  }
+				  .header .menu {
+				    clear: none;
+				    float: right;
+				    max-height: none;
+				  }
+				  .header .menu-icon {
+				    display: none;
+				  }
+				}
+
+			</style>
+
+          <header class="header">
+			  <a href="index.html" class="logo">CVI Therapy</a>
+			  <input class="menu-btn" type="checkbox" id="menu-btn" />
+			  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+			  <ul class="menu">
+			    <li><a href="index.html" style="color: darkgray"><i class="fas fa-fw fa-user-circle"></i> Profile</a></li>
+			    <li><a href="customize.html" style="color: darkgray"><i class="fas fa-fw fa-cogs"></i> Customize</a></li>
+			    <li><a href="recommended.html"><i class="fas fa-fw fa-check-square"></i> Recommended Exercises</a></li>
+			    <li><a href="dashboard.html" style="color: darkgray"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+			    <li><a href="login.html" style="color: darkgray"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
+			  </ul>
+		  </header>
+
+    </div>
+
+    <div id="wrapper" style='padding-top: 57px'>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <div id="spoiler2">
+
+          <!-- Recommended Exercises -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-check-square"></i>
+                Recommended Exercises</div>
+              <div class="card-body">
+                Here is your recommended exercise based on your past performances. You must complete this before getting a new recommendation, and this page will update as you complete them.
+                <p></p>
+                Your recommendation is characterized by the following: speed (low, medium, high), size (small, medium large), color (red, yellow, green, blue, grayscale), and shape (square, triangle, circle). Each feature represents a certain difficulty level.
+                <p></p>
+                Current recommendation: LOW speed, LARGE size, RED color, SQUARE shape
+              </div>
+            </div>
+
+          </div>
+
+		  <a href="cvi_app.html"><button class='btn btn-light' id="tracking-toggle">Start</button></a>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+<!--         <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer> -->
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+
+  </body>
+
+</html>
