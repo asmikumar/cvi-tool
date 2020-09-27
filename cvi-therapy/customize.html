@@ -282,38 +282,20 @@
 
 </div> <!-- hide/show element -->
 
-<div><!--  class='small' -->
-  <button class='btn btn-light' id="tracking-toggle" onclick="startTracking()" disabled="true" style="z-index: 2; position: absolute; margin:20px;">Start</button>
+<div id='tracking-toggle-div' style='margin: 20px;'><!--  class='small' -->
+  <button class='btn btn-light' id="tracking-toggle" onclick="startTracking()" disabled="true" style="z-index: 2; position: absolute;">Start</button>
 </div>
 
-<canvas id='screen' style='height:100%; width: 100%; background-color: lightblue; z-index: 1; position: absolute;'>
-</canvas>
+<canvas id='screen' style='height:100%; width: 100%; background-color: transparent; z-index: 1; position: absolute; display: none'></canvas>
 
-<!-- <style>
-
-#tracking-toggle {
-    z-index: 1;
-}
-
-#tracking-toggle {
-
-    z-index: 1;
-}
-#screen {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 3;
-}
-</style> -->
-
+<script type="text/javascript">
+  document.getElementById('screen').css.display = '';
+</script>
 
 <!-- <script src="webgazer.js" type="text/javascript"></script> --> <!-- webgazer.js -->
 <script type="text/javascript">
 
-var canvas = document.getElementById('screen');
-canvas.width = canvas.offsetWidth;
-canvas.height = canvas.offsetHeight;
+
 // webgazer
 // webgazer.setRegression('ridge') // currently must set regression and tracker
 //             //.setTracker('clmtrackr')
@@ -341,11 +323,20 @@ function startTracking() {
   document.getElementById('spoiler_nav_bar').style.display = 'none' // hide customizations
   document.getElementById('spoiler_1').style.display = 'none' // show customizations
   document.getElementById('spoiler_2').style.display = 'none' // show customizations
+  document.getElementById('tracking-toggle-div').style.margin = '0px'
+  document.getElementById('tracking-toggle').style.margin = '20px'
+
+  var canvas = document.getElementById('screen');
+  canvas.style.display = '';
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
   getCoordinates = setInterval(function(){ 
     var element = $('#anim_ball');
     var centerX = element.offset().left + element.width()/2
     var centerY = element.offset().top + element.height()/2
-    document.getElementById("screen").getContext('2d').fillRect(centerX,centerY,2,2);
+    canvas.getContext('2d').fillRect(centerX,centerY,2,2);
+
     // getPredictionKid();
     console.log("X: " + centerX + ", Y: " + centerY);}, 100);
 
@@ -373,10 +364,15 @@ function startTracking() {
 };
 
 function stopTracking() {
+  document.getElementById('tracking-toggle-div').style.margin = '20px'
+  document.getElementById('tracking-toggle').style.margin = '0px'
   document.getElementById('spoiler_nav_bar').style.display = '' // show customizations
   document.getElementById('spoiler_1').style.display = '' // show customizations
   document.getElementById('spoiler_2').style.display = '' // show customizations
-  document.getElementById("screen").style.display = 'none';
+
+  var canvas = document.getElementById('screen');
+  canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+  canvas.style.display = 'none';
 
   clearInterval(getCoordinates)
   this.onclick = startTracking;
