@@ -345,7 +345,19 @@ document.getElementById('camera-toggle').style.top = window.innerHeight - $("#ca
 
 // returns an object with x and y coordinates of the center of the element
 function startTracking() {
+  
+  document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
+  console.log(document.getElementById('camera-toggle').style.height)
+  // webgazer.begin();
+  this.onclick = showCamera;
+
+  webgazer.showVideo(false);
+  webgazer.showFaceOverlay(false);
+  webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(false);
   webgazer.begin();
+
+  document.querySelector('#camera-toggle').innerHTML = 'Show camera';
   document.getElementById('camera-toggle').style.display = ''
   document.getElementById('spoiler_nav_bar').style.display = 'none' // hide customizations
   document.getElementById('spoiler_1').style.display = 'none' // show customizations
@@ -392,7 +404,13 @@ function startTracking() {
 };
 
 function stopTracking() {
+  
+  webgazer.showVideo(false);
+  webgazer.showFaceOverlay(false);
+  webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(false);
   webgazer.end();
+
   document.getElementById('camera-toggle').style.display = 'none'
   document.getElementById('tracking-toggle-div').style.margin = '20px'
   document.getElementById('tracking-toggle').style.margin = '0px'
@@ -421,6 +439,7 @@ function showCamera() {
   webgazer.showVideo(true);
   webgazer.showFaceOverlay(true);
   webgazer.showFaceFeedbackBox(true);
+  webgazer.showPredictionPoints(true);
   document.getElementById('camera-toggle').style.top = window.innerHeight - webgazer.params.videoViewerHeight - 20 - $("#camera-toggle").outerHeight() - 20 + 'px';
   // webgazer.begin();
   this.onclick = hideCamera;
@@ -433,8 +452,9 @@ function hideCamera() {
   webgazer.showVideo(false);
   webgazer.showFaceOverlay(false);
   webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(true);
   document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
-  console.log(document.getElementById('camera-toggle').style.height)
+  // console.log(document.getElementById('camera-toggle').style.height)
   // webgazer.begin();
   this.onclick = showCamera;
   document.querySelector('#camera-toggle').innerHTML = 'Show camera';
