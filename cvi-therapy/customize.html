@@ -292,7 +292,7 @@
   document.getElementById('screen').css.display = '';
 </script>
 
-<button class='btn btn-light' id="camera-toggle" onclick="showCamera()" style="z-index: 3; position: absolute; display: none;">Hide camera</button>
+<button class='btn btn-light' id="camera-toggle" onclick="hideCamera()" style="margin-bottom: 20px; margin-left: 20px; z-index: 3; position: absolute; display: none;">Show camera</button>
 
 <script src="../static/webgazer.js" type="text/javascript"></script> <!-- webgazer.js -->
 <script type="text/javascript">
@@ -337,6 +337,11 @@ webgazer.setRegression('ridge') // currently must set regression and tracker
             })
             // .begin()
             .showPredictionPoints(true);
+
+webgazer.showVideo(false);
+webgazer.showFaceOverlay(false);
+webgazer.showFaceFeedbackBox(false);
+document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
 
 // returns an object with x and y coordinates of the center of the element
 function startTracking() {
@@ -416,9 +421,11 @@ function showCamera() {
   webgazer.showVideo(true);
   webgazer.showFaceOverlay(true);
   webgazer.showFaceFeedbackBox(true);
+  document.getElementById('camera-toggle').style.top = window.innerHeight - webgazer.params.videoViewerHeight - 20 - $("#camera-toggle").outerHeight() - 20 + 'px';
   // webgazer.begin();
   this.onclick = hideCamera;
   document.querySelector('#camera-toggle').innerHTML = 'Hide camera';
+
 };
 
 function hideCamera() {
@@ -426,6 +433,8 @@ function hideCamera() {
   webgazer.showVideo(false);
   webgazer.showFaceOverlay(false);
   webgazer.showFaceFeedbackBox(false);
+  document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
+  console.log(document.getElementById('camera-toggle').style.height)
   // webgazer.begin();
   this.onclick = showCamera;
   document.querySelector('#camera-toggle').innerHTML = 'Show camera';
