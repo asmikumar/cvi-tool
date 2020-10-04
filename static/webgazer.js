@@ -45699,17 +45699,19 @@ function store_points(x, y, k) {
         // Change the video viewer
         videoElement.style.width = w + 'px';
         videoElement.style.height = h + 'px';
+        videoElement.style.left = "100px"; // ADDED THIS LINE
         
         // Change the face overlay
         faceOverlay.style.width = w + 'px';
         faceOverlay.style.height = h + 'px';
+        faceOverlay.style.left = "100px"; // ADDED THIS LINE
 
         // Change the feedback box size
         // Compute the boundaries of the face overlay validation box based on the video size
         var tlwh = webgazer.computeValidationBoxSize()
         // Assign them to the object
         faceFeedbackBox.style.top = tlwh[0] + 'px';
-        faceFeedbackBox.style.left = tlwh[1] + 'px';
+        faceFeedbackBox.style.left = tlwh[1] + 100 + 'px'; // ADDED/CHANGED THIS LINE
         faceFeedbackBox.style.width = tlwh[2] + 'px';
         faceFeedbackBox.style.height = tlwh[3] + 'px';
     };
