@@ -341,21 +341,26 @@ webgazer.setRegression('ridge') // currently must set regression and tracker
 webgazer.showVideo(false);
 webgazer.showFaceOverlay(false);
 webgazer.showFaceFeedbackBox(false);
+webgazer.showPredictionPoints(false);
 document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
 
 // returns an object with x and y coordinates of the center of the element
 function startTracking() {
+
+  webgazer.showVideo(false);
+  webgazer.showFaceOverlay(false);
+  webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(false);
+  webgazer.params.showGazeDot = false;
   
   document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
   console.log(document.getElementById('camera-toggle').style.height)
   // webgazer.begin();
   this.onclick = showCamera;
 
-  webgazer.showVideo(false);
-  webgazer.showFaceOverlay(false);
-  webgazer.showFaceFeedbackBox(false);
-  webgazer.showPredictionPoints(false);
   webgazer.begin();
+  webgazer.showPredictionPoints(false);
+  webgazer.params.showGazeDot = false;
 
   document.querySelector('#camera-toggle').innerHTML = 'Show camera';
   document.getElementById('camera-toggle').style.display = ''
@@ -405,12 +410,13 @@ function startTracking() {
 
 function stopTracking() {
   
+
+  webgazer.end();
   webgazer.showVideo(false);
   webgazer.showFaceOverlay(false);
   webgazer.showFaceFeedbackBox(false);
   webgazer.showPredictionPoints(false);
-  webgazer.end();
-
+  webgazer.params.showGazeDot = false;
   document.getElementById('camera-toggle').style.display = 'none'
   document.getElementById('tracking-toggle-div').style.margin = '20px'
   document.getElementById('tracking-toggle').style.margin = '0px'
