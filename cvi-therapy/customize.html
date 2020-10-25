@@ -197,6 +197,7 @@
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
+          <li><a href="get_started.html" style="color: darkgray"><i class="fas fa-fw fa-hand-pointer"></i> Get Started</a></li>
           <li><a href="index.html" style="color: darkgray"><i class="fas fa-fw fa-user-circle"></i> Profile</a></li>
           <li><a href="./calibration/calibration.html" style="color: darkgray"><i class="fas fa-fw fa-mouse-pointer"></i> Calibration</a></li>
           <li><a href="customize.html"><i class="fas fa-fw fa-cogs"></i> Customize</a></li>
@@ -298,33 +299,7 @@
 <script src="../static/webgazer.js" type="text/javascript"></script> <!-- webgazer.js -->
 <script type="text/javascript">
 
-
-// // webgazer
-// webgazer.setRegression('ridge') // currently must set regression and tracker
-//             //.setTracker('clmtrackr')
-//             webgazer.begin();
-//             console.log("hi")
-//             .setGazeListener(function(data, clock) {
-//                 if (data == null) {
-//                     return;
-//                 }
-//                 // console.log(data); // data is an object containing an x and y key which are the x and y prediction coordinates
-//                 // console.log(clock); // elapsed time in milliseconds since webgazer.begin() was called
-//             })
-//             .begin()
-//             .showPredictionPoints(true);
-
-// async function getPredictionKid() {
-//     let prediction = await webgazer.getCurrentPrediction();
-//         if (prediction) {
-//             let gazeX = prediction.x;
-//             let gazeY = prediction.y;
-//             console.log("GAZE X: " + gazeX + ", GAZE Y: " + gazeY);
-//         }
-//     }
-
-
-    // webgazer
+// webgazer
 webgazer.setRegression('ridge') // currently must set regression and tracker
             //.setTracker('clmtrackr')
             // webgazer.begin();
@@ -410,7 +385,6 @@ function startTracking() {
 };
 
 function stopTracking() {
-  
 
   webgazer.end();
   webgazer.showVideo(false);
