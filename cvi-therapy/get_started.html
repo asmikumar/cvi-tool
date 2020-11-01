@@ -209,7 +209,35 @@
 
 </div> 
 
-      <style> .container-fluid{ padding-top: 54px; padding-left: 20px} </style> 
+      <style> .container-fluid{ padding-top: 54px; padding-left: 20px} 
+
+        #toc_container {
+          background: #f9f9f9 none repeat scroll 0 0;
+          border: 1px solid #aaa;
+          display: table;
+          font-size: 95%;
+          /*color: black;*/
+          margin-bottom: 1em;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          padding-right: 40px;
+          width: auto;
+        }
+
+        #toc_container a {
+          color: black;
+        }
+
+        .toc_title {
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #toc_container li, #toc_container ul, #toc_container ul li{
+            list-style: outside none none !important;
+
+        }
+      </style> 
 
       <div id="wrapper">
 
@@ -220,17 +248,30 @@
           <div id= "encapsule">
 
           <h3>Get Started Here!</h3>
-          Here is a guide to help you get started.
+            <div id="toc_container">
+              <!-- <p class="toc_title">Contents</p> -->
+              <ul class="toc_list">
+                <li><a href="#header1">Background Information on CVI</a>
+                <!-- <ul>
+                  <li><a href="#First_Sub_Point_1">1.1 First Sub Point 1</a></li>
+                  <li><a href="#First_Sub_Point_2">1.2 First Sub Point 2</a></li>
+                </ul> -->
+              </li>
+              <li><a href="#header2">Why will this therapy tool help?</a></li>
+              <li><a href="#header3">Key Features</a></li>
+              </ul>
+            </div>
 
           <p></p>
 
-          <h4>Table of Contents</h4>
-          LIST HERE, ALSO INSERT PICTURES TO BREAK UP TEXT
-
           <p></p>
 
-          <h4>Background Information on CVI</h4>
+          <h4 id='header1'>Background Information on CVI</h4>
           Cortical visual impairment (CVI) is the most prevalent type of visual impairment in children ages three or younger. It refers to a decreased visual response attributed to neurological damage to the posterior visual pathways and/or the occipital lobes of the brain, rather than the eyes. In other words, the eyes function correctly, but the brain cannot interpret what is seen well. Additionally, it is often difficult to diagnose, as eye examinations and pupillary reactions are normal during testing; in combination with visual evaluations, an MRI must be conducted to confirm diagnosis. 
+
+          <p class="center">
+          <img src="https://www.pritzkerlaw.com/wp-content/uploads/2018/02/vision-brain-injury.jpg" style='height: 438px; width: 600px'>
+          </p>
 
           <p></p>
 
@@ -251,7 +292,7 @@
             <li>Impaired or absence of visual guided reach</li>
           </ol>
 
-          <h4>Why will this therapy tool help?</h4>
+          <h4 id='header2'>Why will this therapy tool help?</h4>
           Because children with CVI have different abilities and needs, we must provide a customizable product to train their vision, while adhering to common characteristics such as the need for movement as well as figure color, size, and shape options. According to prior research and data, current methods of therapy are too expensive, inaccessible to many in developing countries, and not personalizable. They are also heavily reliant on the parent, which results in inaccurate, qualitative observations, and much slower progress. To revolutionize treatment to address all the aforementioned factors and more, I built FollowMe: a web application that provides at-home, inexpensive, accessible, and individualized therapy for young children with CVI, linking patients with doctors and offering more convenient care.
 
           <p></p>
@@ -280,7 +321,7 @@
 
           <p></p>
 
-          <h4>Key Features</h4>
+          <h4 id='header3'>Key Features</h4>
           Patient profile (editable by patient’s family)
 
           <ul>
