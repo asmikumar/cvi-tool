@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Get Started</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="{{url_for('static', filename='vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{url_for('static', filename='css/sb-admin.css')}}" rel="stylesheet">
+
+    <!-- Other HTML pages -->
+    <!-- <script src="./index_content.html"></script>
+    <script src="./index.html"></script>
+    <script src="./customize.html"></script>
+    <script src="./recommended.html"></script>
+    <script src="./logout.html"></script> -->
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='customize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='spectrum.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='spectrum.js')}}"></script>
+
+  </head>
+
+<body>
+
+<!-- ////////////////////////////////////// -->
+
+<div id="spoiler_nav_bar"> 
+    
+        <style>
+            body {
+          /*margin: 0;*/
+          font-family: Segoe UI, Avenir, sans-serif;
+          /*background-color: #f4f4f4;*/
+        }
+
+        a {
+          color: white;
+        }
+
+        /* header */
+
+        .header {
+          background-color: #383838;
+          color: white;
+          box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+          position: fixed;
+          width: 100%;
+          z-index: 3;
+        }
+
+        .header ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          overflow: hidden;
+          background-color: #383838;
+        }
+
+        .header li a {
+          display: block;
+          color: white;
+          font-size: 16px;
+          padding: 12px 20px;
+          /*border-right: 1px solid #f4f4f4;*/
+          text-decoration: none;
+        }
+
+        /*.header li a:hover,
+        .header .menu-btn:hover {
+          background-color: #f4f4f4;
+        }*/
+
+        .header .logo {
+          display: block;
+          float: left;
+          font-size: 22px;
+          padding: 12px 20px;
+          text-decoration: none;
+        }
+
+        /* menu */
+
+        .header .menu {
+          clear: both;
+          max-height: 0;
+          transition: max-height .2s ease-out;
+        }
+
+        /* menu icon */
+
+        .header .menu-icon {
+          cursor: pointer;
+          display: inline-block;
+          float: right;
+          /*padding: 20px 20px;*/
+          padding-top: 27px;
+          padding-right: 20px;
+          position: relative;
+          user-select: none;
+        }
+
+        .header .menu-icon .navicon {
+          background: white;
+          display: block;
+          height: 2px;
+          position: relative;
+          transition: background .2s ease-out;
+          width: 20px;
+        }
+
+        .header .menu-icon .navicon:before,
+        .header .menu-icon .navicon:after {
+          background: white;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all .2s ease-out;
+          width: 100%;
+        }
+
+        .header .menu-icon .navicon:before {
+          top: 6px;
+        }
+
+        .header .menu-icon .navicon:after {
+          top: -6px;
+        }
+
+        /* menu btn */
+
+        .header .menu-btn {
+          display: none;
+        }
+
+        .header .menu-btn:checked ~ .menu {
+          max-height: 400px;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon {
+          background: transparent;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:before {
+          transform: rotate(-45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:after {
+          transform: rotate(45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+          top: 0;
+        }
+
+        /* 48em = 768px */
+
+        @media (min-width: 60em) {
+          .header li {
+            float: left;
+          }
+          .header li a {
+            padding: 16px 20px;
+          }
+          .header .menu {
+            clear: none;
+            float: right;
+            max-height: none;
+          }
+          .header .menu-icon {
+            display: none;
+          }
+        }
+
+      </style> 
+
+        <header class="header">
+        <a href="index" class="logo">CVI Therapy</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="get_started"><i class="fas fa-fw fa-hand-pointer"></i> Get Started</a></li>
+          <li><a href="index" style="color: darkgray"><i class="fas fa-fw fa-user-circle"></i> Profile</a></li>
+          <li><a href="calibration" style="color: darkgray"><i class="fas fa-fw fa-mouse-pointer"></i> Calibration</a></li>
+          <li><a href="customize" style="color: darkgray"><i class="fas fa-fw fa-cogs"></i> Customize</a></li>
+          <li><a href="recommended" style="color: darkgray"><i class="fas fa-fw fa-check-square"></i> Recommended Exercises</a></li>
+          <li><a href="dashboard" style="color: darkgray"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="login" style="color: darkgray"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </header>
+
+</div> 
+
+      <style> .container-fluid{ padding-top: 54px; padding-left: 20px} 
+
+        #toc_container {
+          background: #f9f9f9 none repeat scroll 0 0;
+          border: 1px solid #aaa;
+          display: table;
+          font-size: 95%;
+          /*color: black;*/
+          margin-bottom: 1em;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          padding-right: 40px;
+          width: auto;
+        }
+
+        #toc_container a {
+          color: black;
+        }
+
+        .toc_title {
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #toc_container li, #toc_container ul, #toc_container ul li{
+            list-style: outside none none !important;
+
+        }
+      </style> 
+
+      <div id="wrapper">
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <div id= "encapsule">
+
+          <h3>Get Started Here!</h3>
+            <div id="toc_container">
+              <!-- <p class="toc_title">Contents</p> -->
+              <ul class="toc_list">
+                <li><a href="#header1">Background Information on CVI</a>
+                <!-- <ul>
+                  <li><a href="#First_Sub_Point_1">1.1 First Sub Point 1</a></li>
+                  <li><a href="#First_Sub_Point_2">1.2 First Sub Point 2</a></li>
+                </ul> -->
+              </li>
+              <li><a href="#header2">Why will this therapy tool help?</a></li>
+              <li><a href="#header3">Key Features</a></li>
+              </ul>
+            </div>
+
+          <p></p>
+
+          <p></p>
+
+          <h4 id='header1'>Background Information on CVI</h4>
+          Cortical visual impairment (CVI) is the most prevalent type of visual impairment in children ages three or younger. It refers to a decreased visual response attributed to neurological damage to the posterior visual pathways and/or the occipital lobes of the brain, rather than the eyes. In other words, the eyes function correctly, but the brain cannot interpret what is seen well. Additionally, it is often difficult to diagnose, as eye examinations and pupillary reactions are normal during testing; in combination with visual evaluations, an MRI must be conducted to confirm diagnosis. 
+
+          <p class="center">
+          <img src="https://www.pritzkerlaw.com/wp-content/uploads/2018/02/vision-brain-injury.jpg" style='height: 438px; width: 600px'>
+          </p>
+
+          <p></p>
+
+          Children with CVI have different abilities and needs. The presence of and type of additional handicaps, such as language skills, vary. However, they share some key similarities, characterized by the statements below.
+
+          <p></p>
+
+          <ol>
+            <li>Preference for a specific color</li>
+            <li>Need for movement</li>
+            <li>Delayed response when looking at objects</li>
+            <li>Visual field preferences</li>
+            <li>Difficulty with visual complexity</li>
+            <li>Light-gazing and/or non-purposeful gazing</li>
+            <li>Distance vision impaired</li>
+            <li>Impaired visual reflexes</li>
+            <li>Preference for familiar objects</li>
+            <li>Impaired or absence of visual guided reach</li>
+          </ol>
+
+          <h4 id='header2'>Why will this therapy tool help?</h4>
+          Because children with CVI have different abilities and needs, we must provide a customizable product to train their vision, while adhering to common characteristics such as the need for movement as well as figure color, size, and shape options. According to prior research and data, current methods of therapy are too expensive, inaccessible to many in developing countries, and not personalizable. They are also heavily reliant on the parent, which results in inaccurate, qualitative observations, and much slower progress. To revolutionize treatment to address all the aforementioned factors and more, I built FollowMe: a web application that provides at-home, inexpensive, accessible, and individualized therapy for young children with CVI, linking patients with doctors and offering more convenient care.
+
+          <p></p>
+
+          FollowMe exercises patients’ vision in a healthy way and, in essence, displays moving objects on a screen and encourages the patient to follow them through doctor or automated unique, structured exercises. If used consistently, this method will strengthen neural pathways and enable the child to recognize simple objects faster, focus for longer periods of time, and learn how to see and process more complex objects.
+
+          <p></p>
+
+          For hands-free, efficient care, I have implemented an easily-integratable gaze tracking artificial intelligence model that uses computer vision to locate the eyes of the user through a computer (or tablet) webcam and track his/her gaze path throughout the exercise in real time. In other words, it infers where the user is looking on the screen with depth perception. The gaze tracking model can self-calibrate through mouse clicks and/or mouse movements, improving the mapping between the features of the eye and positions on the screen. After an initial calibration from the doctor that can be redone or improved anytime, this calibration model is stored and deployed to patients. During an exercise, the patient’s path is compared to the actual figure path and the error between the two is calculated, leading to an overall accuracy score (while also accounting for possible model inaccuracies, currently around 100 pixels). With more powerful webcams, this error will decrease, but for now, it suffices because children with CVI focus on the general vicinity of an object, not a pinpointed location.
+
+          <p></p>
+
+          Within their specific portal in FollowMe, doctors have the option of assigning customized exercises to the child, but more importantly, a recommendation model assesses the patient’s performance through sessions over time, learns which features the child has trouble with and should work on, recognizes pace of progress, and assigns automatic exercises. It continuously learns and adapts to each child.
+
+          <p></p>
+
+          Additionally, FollowMe enables quick and effective communication between the parent(s) and doctor. It presents the patient’s scores and statistics on a user-friendly dashboard, allowing them both to view updated, concordant results. 
+
+          <p></p>
+
+          Opportunities to use vision should be incorporated into your child’s everyday life. It becomes easier and easier for kids with cortical visual impairment (CVI) to see these objects as they become familiar with them. It can also be helpful to keep one familiar object with your child throughout the day. This allows the child to learn to recognize the object in different environments. Furthermore, children with CVI may tire easily when engaged in visual tasks, which is another reason to keep vision sessions short and frequent throughout the day.
+
+          <p></p>
+
+          In conclusion, this tool has the potential to revolutionize treatment of CVI, and I hope that, with the guidance of Dr. Kyle Keane from Massachusetts Institute of Technology (MIT), the Humanistic Co-Design Initiative, and the LV Prasad Eye Institute, doctors can use FollowMe to gather quantitative measurements about a patient’s performance and help children gain better results in less time.
+
+          <p></p>
+
+          <h4 id='header3'>Key Features</h4>
+          Patient profile (editable by patient’s family)
+
+          <ul>
+            <li>Patient demographics</li>
+            <li>Patient’s parental information</li>
+            <li>Notes from doctor about patient’s CVI conditions before therapy</li>
+          </ul>
+
+          <p></p>
+
+          Doctor profile (editable by doctor)
+
+          <ul>
+            <li>Doctor’s contact information</li>
+            <li>Doctor’s initial recommendations for CVI therapy exercises to begin with (to help calibrate the recommender model)</li>
+          </ul>
+
+          Customization page for CVI therapy exercises
+
+          <ul>
+            <li>Slider for selecting object speed for custom session (e.g., when doctor would like to assess a patient at the hospital)
+            </li>
+            <li>Slider for selecting object size for custom session</li>
+            <li>Dropdown for selecting screen background color for custom session</li>
+            <li>Start and stop buttons for beginning and ending custom sessions</li>
+          </ul>
+
+          Recommended exercises
+
+          <ul>
+            <li>Displaying links to new exercise combinations (with object speed, size, color, and shape specifications on black or white backgrounds) to try to best improve progress 
+            </li>
+            <li>Start and stop buttons for beginning and ending recommended exercises (duration specified by doctor, with “force stop” to quit an active exercise) </li>
+          </ul>
+
+          Dashboard
+
+          <ul>
+            <li>Progress table displaying session details and scores (percent similarity of patient’s gaze scanpath and object’s actual path, using a modified Euclidean distance type measure)</li>
+            <li>Summary statistics displaying patient’s average score across all sessions, number of sessions, and total practice time</li>
+            <li>Graph displaying scanpaths of patient’s eyes and object’s actual path on the screen for the most recent session</li>
+            <li>Bar chart of average scores by object color</li>
+            <li>Bar chart average scores by object shape</li>
+            <li>Scatter plot of scores over object sizes </li>
+            <li>Scatter plot of scores over object speeds</li>
+            <li>Donut charts displaying the percentage of scores above and below a user-specified threshold for each object color (red, yellow, green, blue, grayscale), shape (square, triangle, circle), size (small, medium, large), and speed (low, medium, high) across exercises completed</li>
+          </ul>
+
+
+
+          <style>
+            .center {
+                text-align: center;
+            }
+          </style>
+
+          <p class="center">
+          <img src="https://i.pinimg.com/originals/b2/24/d9/b224d9a70972e0a17a29e7e8117d3536.png" style='height: 400px; width: 400px'>
+          </p>
+
+          <hr>
+
+          <i>Place for additional notes.</i>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  </body>

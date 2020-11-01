@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Customize</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="{{url_for('static', filename='vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{url_for('static', filename='css/sb-admin.css')}}" rel="stylesheet">
+
+    <!-- Other HTML pages -->
+    <script src="./get_started.html"></script>
+    <script src="./index_content.html"></script>
+    <script src="./index.html"></script>
+    <script src="./calibration_content.html"></script>
+    <script src="./calibration.html"></script>
+    <script src="./customize.html"></script>
+    <script src="./recommended.html"></script>
+    <script src="./dashboard.html"></script>
+    <script src="./logout.html"></script>
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='customize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='spectrum.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='spectrum.js')}}"></script>
+
+  </head>
+
+<body>
+
+<!-- ////////////////////////////////////// -->
+
+<div id="spoiler_nav_bar"> <!-- hide/show element -->
+    
+        <style>
+            body {
+          /*margin: 0;*/
+          font-family: Segoe UI, Avenir, sans-serif;
+          /*background-color: #f4f4f4;*/
+        }
+
+        a {
+          color: white;
+        }
+
+        /* header */
+
+        .header {
+          background-color: #383838;
+          color: white;
+          box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+          position: fixed;
+          width: 100%;
+          z-index: 3;
+        }
+
+        .header ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          overflow: hidden;
+          background-color: #383838;
+        }
+
+        .header li a {
+          display: block;
+          color: white;
+          font-size: 16px;
+          padding: 12px 20px;
+          /*border-right: 1px solid #f4f4f4;*/
+          text-decoration: none;
+        }
+
+        /*.header li a:hover,
+        .header .menu-btn:hover {
+          background-color: #f4f4f4;
+        }*/
+
+        .header .logo {
+          display: block;
+          float: left;
+          font-size: 22px;
+          padding: 12px 20px;
+          text-decoration: none;
+        }
+
+        /* menu */
+
+        .header .menu {
+          clear: both;
+          max-height: 0;
+          transition: max-height .2s ease-out;
+        }
+
+        /* menu icon */
+
+        .header .menu-icon {
+          cursor: pointer;
+          display: inline-block;
+          float: right;
+          /*padding: 20px 20px;*/
+          padding-top: 27px;
+          padding-right: 20px;
+          position: relative;
+          user-select: none;
+        }
+
+        .header .menu-icon .navicon {
+          background: white;
+          display: block;
+          height: 2px;
+          position: relative;
+          transition: background .2s ease-out;
+          width: 20px;
+        }
+
+        .header .menu-icon .navicon:before,
+        .header .menu-icon .navicon:after {
+          background: white;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all .2s ease-out;
+          width: 100%;
+        }
+
+        .header .menu-icon .navicon:before {
+          top: 6px;
+        }
+
+        .header .menu-icon .navicon:after {
+          top: -6px;
+        }
+
+        /* menu btn */
+
+        .header .menu-btn {
+          display: none;
+        }
+
+        .header .menu-btn:checked ~ .menu {
+          max-height: 400px;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon {
+          background: transparent;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:before {
+          transform: rotate(-45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:after {
+          transform: rotate(45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+          top: 0;
+        }
+
+        /* 48em = 768px */
+
+        @media (min-width: 60em) {
+          .header li {
+            float: left;
+          }
+          .header li a {
+            padding: 16px 20px;
+          }
+          .header .menu {
+            clear: none;
+            float: right;
+            max-height: none;
+          }
+          .header .menu-icon {
+            display: none;
+          }
+        }
+
+      </style>
+
+       <header class="header">
+        <a href="index" class="logo">CVI Therapy</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="get_started" style="color: darkgray"><i class="fas fa-fw fa-hand-pointer"></i> Get Started</a></li>
+          <li><a href="index" style="color: darkgray"><i class="fas fa-fw fa-user-circle"></i> Profile</a></li>
+          <li><a href="calibration" style="color: darkgray"><i class="fas fa-fw fa-mouse-pointer"></i> Calibration</a></li>
+          <li><a href="customize"><i class="fas fa-fw fa-cogs"></i> Customize</a></li>
+          <li><a href="recommended" style="color: darkgray"><i class="fas fa-fw fa-check-square"></i> Recommended Exercises</a></li>
+          <li><a href="dashboard" style="color: darkgray"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="login" style="color: darkgray"><i class="fas fa-fw fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </header>
+
+</div> <!-- hide/show element -->
+
+<!-- ////////////////////////////////////// -->
+
+<div id="spoiler_1" style='padding-top: 57px'> <!-- hide/show element -->
+
+    <style>
+      body {
+          font-family: Segoe UI, Avenir, sans-serif;
+      }
+      button {
+          font-family: Segoe UI, Avenir, sans-serif;
+          font-size: 17px;
+          /*border: black;*/
+          /*outline:none;*/
+          padding-bottom: 5px;
+          /*background:    #eeeeee;
+          border-radius: 20px;
+          color:         #000000;
+          display:       inline-block;*/
+          text-align:    center;
+      }
+    </style>
+
+    <!-- ////////////////////////////////////// -->
+
+    <div class="slidecontainer" style="margin:20px; line-height: 30px;"> 
+      <label style="line-height:15px; font-size: 22px;">Speed: <a id='speed_value'>125</a></label>
+      <a style="line-height:20px"></a>
+      <input type="range" min="50" max="200" value="125" class="slider" id="rangeSpeed">
+    </div>
+
+    <div class="slidecontainer" style="margin:20px; line-height: 30px;">
+      <label style="line-height:15px; font-size: 22px;">Size: <a id='size_value'>100</a></label> 
+      <input type="range" min="100" max="250" value="100" class="slider" id="rangeSize"> 
+    </div>
+
+    <div class='small' style="margin:20px;">
+    <label style="line-height:15px; font-size: 22px;">Background color: </label>
+    <input type='text' id="full2"/>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename='customize.js')}}"></script>
+
+</div> <!-- hide/show element -->
+
+<div><img src="{{url_for('static', filename='images/shapes/blank.png')}}" id="anim_ball" style="position: absolute;" height="100" width="100"> </div>
+
+<div id="spoiler_2"> <!-- hide/show element -->
+
+    <div id="figures" style="margin: 20px; line-height:15px;">
+
+    <label style="font-size: 22px;">Figure selection: </label>
+    <!-- <br clear="all"> -->
+    <p style="line-height:10px;margin:0px;"><br></p>
+    <img src="{{url_for('static', filename='images/shapes/square_red.png')}}" name='square_red' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/square_yellow.png')}}" name='square_yellow' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/square_green.png')}}" name='square_green' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/square_blue.png')}}" name='square_blue' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/square_grayscale.png')}}" name='square_grayscale' style='height: 5.3%; width: 5.3%' />
+    <br clear="all">
+    <img src="{{url_for('static', filename='images/shapes/triangle_red.png')}}" name='triangle_red' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/triangle_yellow.png')}}" name='triangle_yellow' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/triangle_green.png')}}" name='triangle_green' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/triangle_blue.png')}}" name='triangle_blue' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/triangle_grayscale.png')}}" name='triangle_grayscale' style='height: 5.3%; width: 5.3%' />
+    <br clear="all">
+    <img src="{{url_for('static', filename='images/shapes/circle_red.png')}}" name='circle_red' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/circle_yellow.png')}}" name='circle_yellow' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/circle_green.png')}}" name='circle_green' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/circle_blue.png')}}" name='circle_blue' style='height: 5.3%; width: 5.3%' />
+    <img src="{{url_for('static', filename='images/shapes/circle_grayscale.png')}}" name='circle_grayscale' style='height: 5.3%; width: 5.3%' />
+
+    </div>
+
+</div> <!-- hide/show element -->
+
+<div id='tracking-toggle-div' style='margin: 20px;'><!--  class='small' -->
+  <button class='btn btn-light' id="tracking-toggle" onclick="startTracking()" disabled="true" style="z-index: 2; position: absolute;">Start</button>
+</div>
+
+<canvas id='screen' style='height:100%; width: 100%; background-color: transparent; z-index: 1; position: absolute; display: none'></canvas>
+
+<script type="text/javascript">
+  document.getElementById('screen').css.display = '';
+</script>
+
+<button class='btn btn-light' id="camera-toggle" onclick="hideCamera()" style="margin-bottom: 20px; margin-left: 20px; z-index: 3; position: absolute; display: none;">Show camera</button>
+
+<!-- webgazer.js -->
+<script src="{{url_for('static', filename='webgazer.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
+
+// webgazer
+webgazer.setRegression('ridge') // currently must set regression and tracker
+            //.setTracker('clmtrackr')
+            // webgazer.begin();
+            // console.log("hi")
+            .setGazeListener(function(data, clock) {
+                if (data == null) {
+                    return;
+                }
+                // console.log(data); // data is an object containing an x and y key which are the x and y prediction coordinates
+                // console.log(clock); // elapsed time in milliseconds since webgazer.begin() was called
+            })
+            // .begin()
+            .showPredictionPoints(true);
+
+webgazer.showVideo(false);
+webgazer.showFaceOverlay(false);
+webgazer.showFaceFeedbackBox(false);
+webgazer.showPredictionPoints(false);
+document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
+
+// returns an object with x and y coordinates of the center of the element
+function startTracking() {
+
+  webgazer.showVideo(false);
+  webgazer.showFaceOverlay(false);
+  webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(false);
+  webgazer.params.showGazeDot = false;
+  
+  document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
+  console.log(document.getElementById('camera-toggle').style.height)
+  // webgazer.begin();
+  this.onclick = showCamera;
+
+  webgazer.begin();
+  webgazer.showPredictionPoints(false);
+  webgazer.params.showGazeDot = false;
+
+  document.querySelector('#camera-toggle').innerHTML = 'Show camera';
+  document.getElementById('camera-toggle').style.display = ''
+  document.getElementById('spoiler_nav_bar').style.display = 'none' // hide customizations
+  document.getElementById('spoiler_1').style.display = 'none' // show customizations
+  document.getElementById('spoiler_2').style.display = 'none' // show customizations
+  document.getElementById('tracking-toggle-div').style.margin = '0px'
+  document.getElementById('tracking-toggle').style.margin = '20px'
+
+  var canvas = document.getElementById('screen');
+  canvas.style.display = '';
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
+  getCoordinates = setInterval(function(){ 
+    var element = $('#anim_ball');
+    var centerX = element.offset().left + element.width()/2
+    var centerY = element.offset().top + element.height()/2
+    canvas.getContext('2d').fillRect(centerX,centerY,2,2);
+
+    // getPredictionKid();
+    console.log("X: " + centerX + ", Y: " + centerY);}, 100);
+
+    // POST logic
+    // fetch('/hello', {
+    //     // Specify the method
+    //     method: 'POST',
+    //     // A JSON payload
+    //     body: JSON.stringify({
+    //         "greeting": "Hello from the browser!"
+    //     })
+    // }).then(function (response) { // At this point, Flask has printed our JSON
+    //     return response.text();
+    // }).then(function (text) {
+    //     console.log('POST response: ');
+    //     // Should be 'OK' if everything was successful
+    //     console.log(text);
+    // });
+
+  this.onclick = stopTracking;
+  document.querySelector('#tracking-toggle').innerHTML = 'Stop';
+  $("#tracking-toggle").addClass("temporary");
+  console.clear()
+  document.getElementById("anim_ball").src = location_picked.toString();
+
+};
+
+function stopTracking() {
+
+  webgazer.end();
+  webgazer.showVideo(false);
+  webgazer.showFaceOverlay(false);
+  webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(false);
+  webgazer.params.showGazeDot = false;
+  document.getElementById('camera-toggle').style.display = 'none'
+  document.getElementById('tracking-toggle-div').style.margin = '20px'
+  document.getElementById('tracking-toggle').style.margin = '0px'
+  document.getElementById('spoiler_nav_bar').style.display = '' // show customizations
+  document.getElementById('spoiler_1').style.display = '' // show customizations
+  document.getElementById('spoiler_2').style.display = '' // show customizations
+
+  var canvas = document.getElementById('screen');
+  canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+  canvas.style.display = 'none';
+
+  clearInterval(getCoordinates)
+  this.onclick = startTracking;
+  document.querySelector('#tracking-toggle').innerHTML = 'Start';
+  document.getElementById("tracking-toggle").disabled = true;
+  document.getElementById("anim_ball").src = "{{url_for('static', filename='images/shapes/blank.png')}}";
+
+  $("#figures img").css("border","5px solid transparent");
+};
+
+var el = document.getElementById("tracking-toggle"); 
+el.onclick = startTracking;
+
+function showCamera() {
+  // webgazer.end();
+  webgazer.showVideo(true);
+  webgazer.showFaceOverlay(true);
+  webgazer.showFaceFeedbackBox(true);
+  webgazer.showPredictionPoints(true);
+  document.getElementById('camera-toggle').style.top = window.innerHeight - webgazer.params.videoViewerHeight - 20 - $("#camera-toggle").outerHeight() - 20 + 'px';
+  // webgazer.begin();
+  this.onclick = hideCamera;
+  document.querySelector('#camera-toggle').innerHTML = 'Hide camera';
+
+};
+
+function hideCamera() {
+  // webgazer.end();
+  webgazer.showVideo(false);
+  webgazer.showFaceOverlay(false);
+  webgazer.showFaceFeedbackBox(false);
+  webgazer.showPredictionPoints(true);
+  document.getElementById('camera-toggle').style.top = window.innerHeight - $("#camera-toggle").outerHeight() - 20 + 'px';
+  // console.log(document.getElementById('camera-toggle').style.height)
+  // webgazer.begin();
+  this.onclick = showCamera;
+  document.querySelector('#camera-toggle').innerHTML = 'Show camera';
+};
+
+var el2 = document.getElementById("camera-toggle"); 
+el2.onclick = showCamera;
+
+</script>
+
+</body>
