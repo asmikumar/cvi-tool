@@ -1,1 +1,1 @@
-web: gunicorn app:cvi
+web: gunicorn cvi:app
