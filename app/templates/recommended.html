@@ -23,6 +23,9 @@
     <script src="{{url_for('static', filename='vendor/chart.js/Chart.min.js')}}"></script>
     <script src="{{url_for('static', filename='vendor/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{url_for('static', filename='vendor/datatables/dataTables.bootstrap4.js')}}"></script>
+	
+	<!-- Page level plugin CSS-->
+	<link href="{{url_for('static', filename='vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
 
     <!-- Custom scripts for all pages-->
     <script src="{{url_for('static', filename='js/sb-admin.min.js')}}"></script>
@@ -227,8 +230,6 @@
 
         <div class="container-fluid">
 
-          <div id="spoiler2">
-
           <!-- Recommended Exercises -->
             <div class="card mb-3">
               <div class="card-header">
@@ -237,15 +238,82 @@
               <div class="card-body">
                 Here is your recommended exercise based on your past performances. You must complete this before getting a new recommendation, and this page will update as you complete them.
                 <p></p>
-                Current recommendation: LOW speed, LARGE size, RED color, SQUARE shape
+                Current recommendation: LOW speed, LARGE size, RED color, SQUARE shape <a href="cvi_app"><button class='btn btn-light' id="tracking-toggle">Start</button></a>
               </div>
             </div>
 
-          </div>
+			  <div class="card mb-3">
+				<div class="card-header">
+					<i class="fas fa-table"></i>
+					Next Exercises</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-bordered" id="dataTable" cellspacing="0">
+						  <thead>
+							<tr>
+							  <th>Doctor</th>
+							  <th>Recommender Model</th>
+							</tr>
+						  </thead>
+						  <tbody>
+						  <tr>
+							<td>
+								<ul>
+								  <li>Color: red</li>
+								  <li>Shape: circle</li>
+								  <li>Size: 240</li>
+								  <li>Speed: 50</li>
+								</ul>
+								<a href="cvi_app"><button class='btn btn-light'>Start</button></a>
+								<p></p>
+								Status: <span style='color: red'>Incomplete</span>
+							  </td>
+							<td>
+							  <ul>
+								<li>Color: red</li>
+								<li>Shape: circle</li>
+								<li>Size: 240</li>
+								<li>Speed: 50</li>
+							  </ul>
+							  <a href="cvi_app"><button class='btn btn-light'>Start</button></a>
+							  <p></p>
+							  Status: <span style='color: red'>Incomplete</span>
+							</td>
+						  </tr>
+							<tr>
+								<td>
+									<ul>
+									  <li>Color: yellow</li>
+									  <li>Shape: triangle</li>
+									  <li>Size: 250</li>
+									  <li>Speed: 50</li>
+									</ul>
+									<a href="cvi_app"><button class='btn btn-light'>Start</button></a>
+									<p></p>
+									Status: <span style='color: red'>Incomplete</span>
+								  </td>
+							  <td>
+								<ul>
+								  <li>Color: yellow</li>
+								  <li>Shape: triangle</li>
+								  <li>Size: 250</li>
+								  <li>Speed: 50</li>
+								</ul>
+								<a href="cvi_app"><button class='btn btn-light'>Start</button></a>
+								<p></p>
+								Status: <span style='color: red'>Incomplete</span>
+							  </td>
+							</tr>						
+						  </tbody>
+						</table>
+					</div>
+				</div>
+	
+			</div>			
+		</div>
+	
+		
 
-		  <a href="cvi_app"><button class='btn btn-light' id="tracking-toggle">Start</button></a>
-
-        </div>
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
