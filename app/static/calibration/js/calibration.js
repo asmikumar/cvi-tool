@@ -62,11 +62,11 @@ $(document).ready(function(){
       }
 
       //Show the middle calibration point after all other points have been clicked.
-      if (PointCalibrate == 8){
+      if (PointCalibrate == 9){
         $("#Pt5").show();
       }
 
-      if (PointCalibrate >= 9){ // last point is calibrated
+      if (PointCalibrate >= 10){ // last point is calibrated
             //using jquery to grab every element in Calibration class and hide them except the middle point.
             $(".Calibration").hide();
             $("#Pt5").show();
