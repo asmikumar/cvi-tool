@@ -69,8 +69,8 @@ li {
 
 /* Calibration point position */
 #Pt1{
-    top: 70px;
-    left:340px;
+    top: 10vh;
+    left:33vw;
 }
 #Pt10{
     top: 60vh;
@@ -78,9 +78,8 @@ li {
 }
 
 #Pt2{
-    top: 70px;
+    top: 10vh;
     left:50vw;
-    margin-left: 340;
 }
 #Pt3{
     top: 70px;
