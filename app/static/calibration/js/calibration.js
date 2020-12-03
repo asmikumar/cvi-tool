@@ -17,7 +17,7 @@ function PopUpInstruction(){
   ClearCanvas();
   swal({
     title:"Calibration",
-    text: "Please click on each of the 9 points on the screen. You must click on each point 5 times till it goes yellow. This will calibrate your eye movements.",
+    text: "Please click on each of the 30 points on the screen. You must click on each point 5 times till it goes yellow. This will calibrate your eye movements.",
     buttons:{
       cancel: false,
       confirm: true
@@ -62,14 +62,14 @@ $(document).ready(function(){
       }
 
       //Show the middle calibration point after all other points have been clicked.
-      if (PointCalibrate == 9){
-        $("#Pt5").show();
-      }
+      // if (PointCalibrate == 13){
+      //   $("#Pt5").show();
+      // }
 
-      if (PointCalibrate >= 10){ // last point is calibrated
+      if (PointCalibrate >= 30){ // last point is calibrated
             //using jquery to grab every element in Calibration class and hide them except the middle point.
             $(".Calibration").hide();
-            $("#Pt5").show();
+            // $("#Pt5").show();
 
             // clears the canvas
             var canvas = document.getElementById("plotting_canvas");
@@ -127,7 +127,7 @@ $(document).ready(function(){
  */
 function ShowCalibrationPoint() {
   $(".Calibration").show();
-  $("#Pt5").hide(); // initially hides the middle button
+  // $("#Pt5").hide(); // initially hides the middle button
 }
 
 /**

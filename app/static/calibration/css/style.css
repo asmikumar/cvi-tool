@@ -69,25 +69,103 @@ li {
 
 /* Calibration point position */
 #Pt1{
-    top: 10vh;
-    left:33vw;
+    top: 70px;
+    left:34vw;
 }
-#Pt10{
-    top: 60vh;
-    left: 50vw;
-}
-
 #Pt2{
-    top: 10vh;
-    left:50vw;
+    top: 70px;
+    left: 50vw;
 }
 #Pt3{
     top: 70px;
-    right:2vw;
+    left:66vw;
 }
 #Pt4{
+    top: 70px;
+    left: 82vw;
+}
+#Pt5{
+    top: 70px;
+    left:98vw;
+}
+/* ///////////////////////////// */
+#Pt6{
+    top: 190px;
+    left: 26vw;
+}
+#Pt7{
+    top: 190px;
+    left: 42vw;
+}
+#Pt8{
+    top: 190px;
+    left: 58vw;
+}
+#Pt9{
+    top: 190px;
+    left:74vw;
+}
+#Pt10{
+    top: 190px;
+    left: 90vw;
+}
+/* ////////////////////////// */
+#Pt11{
+    top: 310px;
+    left: 2vw;
+}
+#Pt12{
+    top: 310px;
+    left:18vw;
+}
+#Pt13{
+    top: 310px;
+    left: 34vw;
+}
+#Pt14{
+    top: 310px;
+    left: 50vw;
+}
+#Pt15{
+    top: 310px;
+    left: 66vw;
+}
+#Pt16{
+    top: 310px;
+    left: 82vw;
+}
+#Pt17{
+    top: 310px;
+    left: 98vw;
+}
+/* ///////////////////// */
+#Pt18{
+    top: 430px;
+    left: 10vw;
+}
+#Pt19{
+    top: 430px;
+    left: 26vw;
+}
+#Pt20{
+    top: 430px;
+    left: 42vw;
+}
+#Pt21{
+    top: 430px;
+    left: 58vw;
+}
+#Pt22{
+    top: 430px;
+    left: 74vw;
+}
+#Pt23{
+    top: 430px;
+    left: 90vw;
+}
+/* #Pt4{
     top:50vh;
-    left:2vw;
+    left: 2vw;
 }
 #Pt5{
     top: 50vh;
@@ -96,16 +174,32 @@ li {
 #Pt6{
     top: 50vh;
     right:2vw;
-}
-#Pt7{
+} */
+#Pt24{
     bottom:2vw;
     left: 2vw;
 }
-#Pt8{
+#Pt25{
+    bottom:2vw;
+    left:18vw;
+}
+#Pt26{
+    bottom:2vw;
+    left:34vw;
+}
+#Pt27{
     bottom:2vw;
     left:50vw;
 }
-#Pt9{
+#Pt28{
     bottom:2vw;
-    right:2vw;
+    left:66vw;
+}
+#Pt29{
+    bottom:2vw;
+    left:82vw;
+}
+#Pt30{
+    bottom:2vw;
+    left:98vw;
 }
